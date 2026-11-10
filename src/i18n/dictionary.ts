@@ -83,6 +83,7 @@ const id = {
     ],
     disclaimer:
       "TeMan adalah alat bantu latihan, bukan pengganti terapis. Ikuti jenis dan jumlah latihan sesuai arahan terapismu.",
+    readMore: "Baca kebijakan privasi lengkap",
   },
   partners: {
     eyebrow: "Kolaborasi",
@@ -121,6 +122,8 @@ const id = {
     tagline: "Terapi Mandiri, ditemani setiap hari.",
     rights: "Hak cipta dilindungi.",
     credit: "Huruf Plus Jakarta Sans oleh Tokotype (SIL OFL).",
+    privacy: "Kebijakan Privasi",
+    terms: "Syarat dan Ketentuan",
   },
 };
 
@@ -207,6 +210,7 @@ const en: Dictionary = {
     ],
     disclaimer:
       "TeMan is a practice aid, not a replacement for a therapist. Follow your therapist's directions on which exercises to do and how much.",
+    readMore: "Read the full privacy policy",
   },
   partners: {
     eyebrow: "Partnerships",
@@ -245,6 +249,8 @@ const en: Dictionary = {
     tagline: "Self-guided therapy, with you every day.",
     rights: "All rights reserved.",
     credit: "Plus Jakarta Sans typeface by Tokotype (SIL OFL).",
+    privacy: "Privacy Policy",
+    terms: "Terms and Conditions",
   },
 };
 

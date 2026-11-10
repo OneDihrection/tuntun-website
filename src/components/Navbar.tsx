@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { CONTACT_EMAIL } from "@/config";
 import { useLanguage } from "@/i18n/LanguageProvider";
@@ -41,11 +42,11 @@ export function Navbar() {
   }, []);
 
   const links = [
-    { href: "#latihan", label: t.nav.exercises },
-    { href: "#cara-kerja", label: t.nav.how },
-    { href: "#fitur", label: t.nav.features },
-    { href: "#privasi", label: t.nav.privacy },
-    { href: "#faq", label: t.nav.faq },
+    { href: "/#latihan", label: t.nav.exercises },
+    { href: "/#cara-kerja", label: t.nav.how },
+    { href: "/#fitur", label: t.nav.features },
+    { href: "/#privasi", label: t.nav.privacy },
+    { href: "/#faq", label: t.nav.faq },
   ];
 
   return (
@@ -55,9 +56,9 @@ export function Navbar() {
       }`}
     >
       <nav className="mx-auto flex h-18 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
-        <a href="#" aria-label="TeMan" onClick={() => setOpen(false)}>
+        <Link href="/" aria-label="TeMan" onClick={() => setOpen(false)}>
           <Logo />
-        </a>
+        </Link>
 
         <ul className="hidden items-center gap-1 lg:flex">
           {links.map((link) => (

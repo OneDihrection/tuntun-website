@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useSyncExternalStore } from "react";
 import { CONTACT_EMAIL } from "@/config";
 import { useLanguage } from "@/i18n/LanguageProvider";
@@ -29,6 +30,14 @@ export function Footer() {
               {CONTACT_EMAIL}
             </a>
             <StoreBadge dark={false} />
+            <nav className="flex gap-5 font-semibold text-white/80">
+              <Link href="/privasi" className="hover:text-white hover:underline">
+                {t.footer.privacy}
+              </Link>
+              <Link href="/ketentuan" className="hover:text-white hover:underline">
+                {t.footer.terms}
+              </Link>
+            </nav>
           </div>
         </div>
         <div className="mx-auto mt-10 flex max-w-6xl flex-col gap-2 border-t border-white/10 px-4 pt-6 text-sm text-white/55 sm:flex-row sm:justify-between sm:px-6">

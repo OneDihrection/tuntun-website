@@ -15,6 +15,7 @@ npm run build
 
 - Set the real contact inbox in `src/config.ts` (`CONTACT_EMAIL`). It is currently a placeholder.
 - When the app is on the App Store, replace the "coming soon" `StoreBadge` in `src/components/Hero.tsx` with a link.
+- Have the Privacy Policy (`/privasi`) and Terms and Conditions (`/ketentuan`) reviewed by a legal advisor. Their text lives in `src/i18n/legal.ts`; update the "last updated" date there whenever it changes, and revise the policy if the app ever adds analytics, accounts, or cloud sync. Use `https://<domain>/privasi` as the App Store Connect privacy policy URL.
 
 ## Structure
 

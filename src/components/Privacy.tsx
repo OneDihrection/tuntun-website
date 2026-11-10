@@ -1,8 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import { Blob, Eyebrow } from "./Decor";
-import { CloudOff, Mic, Shield, VideoOff } from "./Icons";
+import { ArrowRight, CloudOff, Mic, Shield, VideoOff } from "./Icons";
 
 const icons = [VideoOff, CloudOff, Mic];
 
@@ -39,6 +40,13 @@ export function Privacy() {
         <p className="relative mt-10 rounded-2xl bg-white/10 px-5 py-4 text-sm leading-relaxed text-white/85">
           {t.privacy.disclaimer}
         </p>
+        <Link
+          href="/privasi"
+          className="group relative mt-6 inline-flex items-center gap-2 font-bold text-primary-light hover:underline"
+        >
+          {t.privacy.readMore}
+          <ArrowRight className="size-5 transition-transform group-hover:translate-x-1" />
+        </Link>
       </div>
     </section>
   );
