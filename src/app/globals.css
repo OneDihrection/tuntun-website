@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+/* Brand palette mirrors the TeMan iPad app (Itera/DesignSystem/Components/TherapyControls.swift). */
+@theme {
+  --color-primary: #146150;
+  --color-primary-dark: #0e4a3d;
+  --color-primary-light: #9cd9bf;
+  --color-sage: #d9edde;
+  --color-mint: #f2faf5;
+  --color-media: #bdc6c1;
+  --color-peach: #fae0c4;
+  --color-peach-ink: #8c381f;
+  --color-ink: #1a292e;
+  --color-rust: #b5381a;
+  --color-sun: #ffb800;
+  --color-butter: #fff1c7;
+  --color-sky: #dcecfb;
+  --color-cream: #fffaf3;
+
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-rise: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-14px) rotate(2deg);
+    }
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+}
+
+::selection {
+  background: var(--color-primary-light);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
