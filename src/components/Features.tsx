@@ -10,8 +10,8 @@ const weekReps = [30, 45, 38, 60, 52, 70, 24];
 
 function CameraVisual() {
   return (
-    <div className="relative mx-auto aspect-[4/3] w-full max-w-md overflow-hidden rounded-[2rem] bg-[#14241f] p-4 shadow-2xl">
-      <div className="relative h-full overflow-hidden rounded-3xl bg-media">
+    <div className="relative mx-auto aspect-[4/3] w-full max-w-md overflow-hidden rounded-[2rem] bg-brand-darker p-4 shadow-2xl">
+      <div className="relative h-full overflow-hidden rounded-3xl bg-brand-light-hover">
         <Image
           src="/hands/opposition.png"
           alt=""
@@ -28,12 +28,12 @@ function CameraVisual() {
             [60, 26],
             [66, 34],
           ].map(([cx, cy], i) => (
-            <circle key={i} cx={cx} cy={cy} r="1.8" fill="#ffb800" stroke="white" strokeWidth="0.6" />
+            <circle key={i} cx={cx} cy={cy} r="1.8" fill="white" stroke="#e34a16" strokeWidth="0.8" />
           ))}
         </svg>
         <div className="absolute inset-x-4 bottom-4 rounded-2xl bg-white/90 p-3 backdrop-blur">
-          <div className="h-2.5 overflow-hidden rounded-full bg-sage">
-            <div className="h-full w-[72%] rounded-full bg-primary" />
+          <div className="h-2.5 overflow-hidden rounded-full bg-brand-light-active">
+            <div className="h-full w-[72%] rounded-full bg-brand" />
           </div>
         </div>
       </div>
@@ -44,7 +44,7 @@ function CameraVisual() {
 function VoiceVisual({ chips }: { chips: string[] }) {
   return (
     <div className="relative mx-auto flex aspect-[4/3] w-full max-w-md flex-col items-center justify-center gap-6 rounded-[2rem] bg-butter p-8">
-      <span className="grid size-24 place-items-center rounded-full bg-primary text-white shadow-xl shadow-primary/30">
+      <span className="grid size-24 place-items-center rounded-full bg-brand text-white shadow-xl shadow-brand/30">
         <Mic className="size-11" />
       </span>
       <ul className="flex flex-wrap justify-center gap-3">
@@ -67,13 +67,13 @@ function ProgressVisual({ days, streak }: { days: string[]; streak: string }) {
     <div className="mx-auto aspect-[4/3] w-full max-w-md rounded-[2rem] bg-sky p-7">
       <div className="flex h-full flex-col rounded-3xl bg-white p-5 shadow-lg">
         <div className="flex items-center gap-2 font-extrabold text-ink">
-          <Flame className="size-6 text-rust" /> 12 <span className="font-semibold text-ink/60">{streak}</span>
+          <Flame className="size-6 text-brand-dark" /> 12 <span className="font-semibold text-ink/60">{streak}</span>
         </div>
         <div className="mt-4 flex flex-1 items-end gap-2">
           {weekReps.map((v, i) => (
             <div key={i} className="flex h-full flex-1 flex-col items-center justify-end gap-2">
               <div
-                className={`w-full rounded-t-lg ${i === 5 ? "bg-primary" : "bg-primary-light"}`}
+                className={`w-full rounded-t-lg ${i === 5 ? "bg-brand" : "bg-brand-light-active"}`}
                 style={{ height: `${(v / max) * 100}%` }}
               />
               <span className="text-xs font-semibold text-ink/55">{days[i]}</span>
@@ -86,9 +86,9 @@ function ProgressVisual({ days, streak }: { days: string[]; streak: string }) {
 }
 
 function CareVisual({ chips }: { chips: string[] }) {
-  const colors = ["bg-primary text-white", "bg-ink text-white", "bg-sun text-ink", "bg-white text-primary"];
+  const colors = ["bg-brand text-white", "bg-ink text-white", "bg-sun text-ink", "bg-white text-brand-dark"];
   return (
-    <div className="mx-auto grid aspect-[4/3] w-full max-w-md grid-cols-2 gap-4 rounded-[2rem] bg-peach p-7">
+    <div className="mx-auto grid aspect-[4/3] w-full max-w-md grid-cols-2 gap-4 rounded-[2rem] bg-brand-light-active p-7">
       {chips.map((c, i) => (
         <div key={c} className={`grid place-items-center rounded-3xl p-3 text-center text-lg font-extrabold shadow-md ${colors[i]}`}>
           {c}

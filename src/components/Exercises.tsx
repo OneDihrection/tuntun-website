@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import { Eyebrow } from "./Decor";
 
-const cardColors = ["bg-sage", "bg-peach", "bg-butter", "bg-sky", "bg-sage"];
+const cardColors = ["bg-brand-light", "bg-butter", "bg-brand-light-active", "bg-sky", "bg-brand-light"];
 const armFigures = ["shoulderFlexion", "elbowBend", "directionalReach", "crossMidline"];
 
 export function Exercises() {

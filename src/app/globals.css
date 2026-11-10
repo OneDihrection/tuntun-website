@@ -1,17 +1,19 @@
 @import "tailwindcss";
 
-/* Brand palette mirrors the TeMan iPad app (Itera/DesignSystem/Components/TherapyControls.swift). */
+/* TeMan brand identity: orange scale (Light → Darker) with soft supporting pastels. */
 @theme {
-  --color-primary: #146150;
-  --color-primary-dark: #0e4a3d;
-  --color-primary-light: #9cd9bf;
-  --color-sage: #d9edde;
-  --color-mint: #f2faf5;
-  --color-media: #bdc6c1;
-  --color-peach: #fae0c4;
-  --color-peach-ink: #8c381f;
+  --color-brand-light: #fcede8;
+  --color-brand-light-hover: #fbe4dc;
+  --color-brand-light-active: #f6c7b7;
+  --color-brand: #e34a16;
+  --color-brand-hover: #cc4314;
+  --color-brand-active: #b63b12;
+  --color-brand-dark: #aa3811;
+  --color-brand-dark-hover: #882c0d;
+  --color-brand-dark-active: #66210a;
+  --color-brand-darker: #4f1a08;
+
   --color-ink: #1a292e;
-  --color-rust: #b5381a;
   --color-sun: #ffb800;
   --color-butter: #fff1c7;
   --color-sky: #dcecfb;
@@ -59,7 +61,7 @@ body {
 }
 
 ::selection {
-  background: var(--color-primary-light);
+  background: var(--color-brand-light-active);
 }
 
 @media (prefers-reduced-motion: reduce) {

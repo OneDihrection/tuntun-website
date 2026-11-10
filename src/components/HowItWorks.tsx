@@ -3,15 +3,15 @@
 import { useLanguage } from "@/i18n/LanguageProvider";
 import { Eyebrow, Wave } from "./Decor";
 
-const badgeColors = ["bg-primary text-white", "bg-sun text-ink", "bg-rust text-white", "bg-ink text-white"];
+const badgeColors = ["bg-brand text-white", "bg-sun text-ink", "bg-brand-dark text-white", "bg-ink text-white"];
 
 export function HowItWorks() {
   const { t } = useLanguage();
 
   return (
     <section id="cara-kerja" className="bg-cream">
-      <Wave fill="var(--color-sage)" />
-      <div className="bg-sage py-16 sm:py-20">
+      <Wave fill="var(--color-brand-light)" />
+      <div className="bg-brand-light py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="max-w-2xl">
             <Eyebrow>{t.how.eyebrow}</Eyebrow>
@@ -31,7 +31,7 @@ export function HowItWorks() {
           </ol>
         </div>
       </div>
-      <Wave fill="var(--color-sage)" flip />
+      <Wave fill="var(--color-brand-light)" flip />
     </section>
   );
 }

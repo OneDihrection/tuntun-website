@@ -16,10 +16,10 @@ export function Faq() {
         </div>
         <div className="mt-10 flex flex-col gap-3">
           {t.faq.items.map((item) => (
-            <details key={item.q} className="group rounded-3xl bg-white p-1 ring-1 ring-ink/5 open:bg-mint">
+            <details key={item.q} className="group rounded-3xl bg-white p-1 ring-1 ring-ink/5 open:bg-brand-light">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded-[1.25rem] px-5 py-4 text-lg font-bold [&::-webkit-details-marker]:hidden">
                 {item.q}
-                <span className="grid size-9 shrink-0 place-items-center rounded-full bg-sage text-primary transition-transform group-open:rotate-45">
+                <span className="grid size-9 shrink-0 place-items-center rounded-full bg-brand-light text-brand-dark transition-transform group-open:rotate-45">
                   <Plus className="size-5" />
                 </span>
               </summary>

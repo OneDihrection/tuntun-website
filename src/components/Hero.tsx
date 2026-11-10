@@ -27,8 +27,8 @@ export function Hero() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative overflow-hidden bg-mint">
-      <Blob color="var(--color-peach)" className="pointer-events-none absolute -left-24 top-24 size-72 opacity-70 sm:size-96" />
+    <section className="relative overflow-hidden bg-brand-light">
+      <Blob color="var(--color-brand-light-active)" className="pointer-events-none absolute -left-24 top-24 size-72 opacity-70 sm:size-96" />
       <Blob color="var(--color-butter)" className="pointer-events-none absolute -right-20 -top-16 size-80 rotate-45" />
 
       <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 pb-16 pt-10 sm:px-6 md:grid-cols-[1.1fr_1fr] md:pb-24 md:pt-16">
@@ -36,7 +36,7 @@ export function Hero() {
           <Eyebrow>{t.hero.eyebrow}</Eyebrow>
           <h1 className="mt-4 text-4xl font-extrabold leading-[1.08] tracking-tight text-ink sm:text-5xl lg:text-6xl">
             {t.hero.title}{" "}
-            <span className="relative whitespace-nowrap text-primary">
+            <span className="relative whitespace-nowrap text-brand-dark">
               TeMan.
               <svg viewBox="0 0 200 20" aria-hidden className="absolute -bottom-2 left-0 h-3 w-full text-sun">
                 <path d="M3 14C50 4 120 2 197 10" fill="none" stroke="currentColor" strokeWidth="6" strokeLinecap="round" />
@@ -48,7 +48,7 @@ export function Hero() {
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-4 text-lg font-bold text-white shadow-lg shadow-primary/20 transition hover:-translate-y-0.5 hover:bg-primary-dark"
+              className="group inline-flex items-center gap-2 rounded-full bg-brand px-7 py-4 text-lg font-bold text-white shadow-lg shadow-brand/20 transition hover:-translate-y-0.5 hover:bg-brand-hover active:bg-brand-active"
             >
               {t.hero.cta}
               <ArrowRight className="size-5 transition-transform group-hover:translate-x-1" />
@@ -60,8 +60,8 @@ export function Hero() {
 
         <div className="relative mx-auto w-full max-w-md animate-rise [animation-delay:150ms]">
           <div className="relative aspect-square">
-            <div className="absolute inset-[6%] rounded-full bg-sage" />
-            <div className="absolute inset-[16%] rounded-full bg-primary-light/50" />
+            <div className="absolute inset-[6%] rounded-full bg-brand-light-hover" />
+            <div className="absolute inset-[16%] rounded-full bg-brand-light-active/70" />
             <Image
               src="/hands/hero.png"
               alt=""
@@ -74,14 +74,14 @@ export function Hero() {
           </div>
 
           <div className="absolute -left-2 top-[18%] flex items-center gap-2.5 rounded-2xl bg-white px-4 py-3 shadow-xl shadow-ink/10 sm:-left-8">
-            <span className="grid size-8 place-items-center rounded-full bg-primary text-white">
+            <span className="grid size-8 place-items-center rounded-full bg-brand text-white">
               <Check className="size-4" />
             </span>
             <span className="text-sm font-bold text-ink">{t.hero.bubble}</span>
           </div>
 
           <div className="absolute -right-1 bottom-[14%] flex items-center gap-2 rounded-2xl bg-white px-4 py-3 shadow-xl shadow-ink/10 sm:-right-6">
-            <Flame className="size-6 text-rust" />
+            <Flame className="size-6 text-brand-dark" />
             <span className="text-sm font-bold text-ink">
               5 <span className="font-semibold text-ink/60">{t.features.items[2].streak}</span>
             </span>

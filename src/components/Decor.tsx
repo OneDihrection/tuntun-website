@@ -31,13 +31,13 @@ export function Logo({ className = "" }: { className?: string }) {
   return (
     <span className={`flex items-center gap-2.5 ${className}`}>
       <Image src="/logo.png" alt="" width={40} height={40} className="size-10 rounded-xl shadow-sm" />
-      <span className="text-xl font-extrabold tracking-tight text-primary">TeMan</span>
+      <span className="text-xl font-extrabold tracking-tight text-brand-dark">TeMan</span>
     </span>
   );
 }
 
 export function Eyebrow({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
-    <p className={`text-sm font-bold uppercase tracking-[0.18em] text-rust ${className}`}>{children}</p>
+    <p className={`text-sm font-bold uppercase tracking-[0.18em] text-brand-dark ${className}`}>{children}</p>
   );
 }

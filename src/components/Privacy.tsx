@@ -12,14 +12,14 @@ export function Privacy() {
 
   return (
     <section id="privasi" className="bg-cream px-4 py-8 sm:px-6">
-      <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[2.5rem] bg-primary px-6 py-14 text-white sm:px-12 sm:py-20">
+      <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[2.5rem] bg-brand-darker px-6 py-14 text-white sm:px-12 sm:py-20">
         <Blob color="rgba(255,255,255,0.06)" className="pointer-events-none absolute -right-24 -top-24 size-96" />
         <div className="relative grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:items-center">
           <div>
-            <span className="grid size-16 place-items-center rounded-3xl bg-white/10 text-primary-light">
+            <span className="grid size-16 place-items-center rounded-3xl bg-white/10 text-brand-light-active">
               <Shield className="size-9" />
             </span>
-            <Eyebrow className="mt-6 !text-primary-light">{t.privacy.eyebrow}</Eyebrow>
+            <Eyebrow className="mt-6 !text-brand-light-active">{t.privacy.eyebrow}</Eyebrow>
             <h2 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-5xl">{t.privacy.title}</h2>
           </div>
           <ul className="grid gap-4">
@@ -42,7 +42,7 @@ export function Privacy() {
         </p>
         <Link
           href="/privasi"
-          className="group relative mt-6 inline-flex items-center gap-2 font-bold text-primary-light hover:underline"
+          className="group relative mt-6 inline-flex items-center gap-2 font-bold text-brand-light-active hover:text-white hover:underline"
         >
           {t.privacy.readMore}
           <ArrowRight className="size-5 transition-transform group-hover:translate-x-1" />

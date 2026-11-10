@@ -16,8 +16,8 @@ export function Footer() {
 
   return (
     <footer className="mt-auto bg-cream">
-      <Wave fill="var(--color-ink)" />
-      <div className="bg-ink pb-10 pt-8 text-white">
+      <Wave fill="var(--color-brand-darker)" />
+      <div className="bg-brand-darker pb-10 pt-8 text-white">
         <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 sm:px-6 md:flex-row md:items-start md:justify-between">
           <div>
             <span className="inline-block rounded-2xl bg-white px-3 py-2">
@@ -26,7 +26,7 @@ export function Footer() {
             <p className="mt-4 max-w-xs text-lg font-semibold text-white/80">{t.footer.tagline}</p>
           </div>
           <div className="flex flex-col items-start gap-4 md:items-end">
-            <a href={`mailto:${CONTACT_EMAIL}`} className="text-lg font-bold text-primary-light hover:underline">
+            <a href={`mailto:${CONTACT_EMAIL}`} className="text-lg font-bold text-brand-light-active hover:text-white hover:underline">
               {CONTACT_EMAIL}
             </a>
             <StoreBadge dark={false} />

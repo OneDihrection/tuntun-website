@@ -21,7 +21,7 @@ npm run build
 
 - `src/app/page.tsx` composes the sections in `src/components/`.
 - All copy lives in `src/i18n/dictionary.ts` (`id` is the default, `en` is selectable via the ID/EN toggle and remembered in `localStorage`).
-- Brand colours are Tailwind theme tokens in `src/app/globals.css`, taken from the app's design system.
+- Brand colours are Tailwind theme tokens in `src/app/globals.css`: the TeMan orange scale (`brand-light` … `brand-darker`, each with hover/active steps) plus soft `butter`/`sky` accents.
 - `public/hands/` and `public/plans/` are the app's own 3D hand renders and exercise illustrations; `src/app/icon.png` is the app icon.
 
 ## Deploy to Vercel
