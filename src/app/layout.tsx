@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { DM_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import { Providers } from "@/components/Providers";
 import { SITE_URL } from "@/config";
 import "./globals.css";
@@ -7,6 +7,12 @@ import "./globals.css";
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
   subsets: ["latin"],
+});
+
+const dmMono = DM_Mono({
+  variable: "--font-dm-mono",
+  subsets: ["latin"],
+  weight: ["400", "500"],
 });
 
 const title = "Tuntun: Teman Terapi";
@@ -50,16 +56,17 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f9f9f9" },
-    { media: "(prefers-color-scheme: dark)", color: "#0b0b0c" },
-  ],
+  themeColor: "#f2f0eb",
+  colorScheme: "light",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="id" className={`${jakarta.variable} h-full antialiased`}>
+    <html lang="id" className={`${jakarta.variable} ${dmMono.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col font-sans">
+        <noscript>
+          <style>{".gsap-in{visibility:visible!important}"}</style>
+        </noscript>
         <Providers>{children}</Providers>
       </body>
     </html>

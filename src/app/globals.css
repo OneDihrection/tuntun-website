@@ -1,40 +1,32 @@
 @import "tailwindcss";
 
-/* Foundation colors from the Tuntun app (Figma "Foundation Colors"). Yellow is never text on a light surface. */
+/* Warm paper canvas after labs.google, with the Tuntun app's foundation colors. Yellow is never text on a light surface. */
 :root {
-  --bg: #f9f9f9;
+  --bg: #f2f0eb;
   --surface: #ffffff;
+  --chip: #e7e1d7;
   --ink: #1a1a1a;
-  --yellow-soft: #fffaec;
-  --blue-soft: #eaf4fe;
+  --yellow-soft: #fff6dc;
+  --blue-soft: #e4effb;
   --blue-ink: #1d68b8;
-  --glass: rgb(255 255 255 / 0.72);
-  --glass-edge: rgb(255 255 255 / 0.9);
+  --glass: rgb(242 240 235 / 0.75);
+  --glass-edge: rgb(255 255 255 / 0.7);
   color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0b0b0c;
-    --surface: #18181a;
-    --ink: #f5f5f5;
-    --yellow-soft: #2a220c;
-    --blue-soft: #10233a;
-    --blue-ink: #8cc4ff;
-    --glass: rgb(24 24 26 / 0.7);
-    --glass-edge: rgb(255 255 255 / 0.08);
-    color-scheme: dark;
-  }
-}
+/* Always light: the site has no dark theme, whatever the system preference. */
+@custom-variant dark (&:where(.never-dark, .never-dark *));
 
 @theme inline {
   --color-bg: var(--bg);
   --color-surface: var(--surface);
+  --color-chip: var(--chip);
   --color-ink: var(--ink);
   --color-yellow-soft: var(--yellow-soft);
   --color-blue-soft: var(--blue-soft);
   --color-blue-ink: var(--blue-ink);
   --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-dm-mono), ui-monospace, monospace;
 }
 
 @theme {
@@ -49,25 +41,38 @@ html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
 body { background: var(--bg); color: var(--ink); }
 ::selection { background: color-mix(in srgb, var(--color-yellow) 40%, transparent); }
 
-/* Type: tracking and leading tighten as size grows. */
+/* Type: large, medium weight, tracking tightens as size grows. */
 @utility display {
-  font-size: clamp(2.75rem, 5.2vw, 4.5rem);
-  line-height: 1.04;
-  letter-spacing: -0.035em;
-  font-weight: 700;
+  font-size: clamp(3.5rem, 9vw, 8.5rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+  font-weight: 500;
   text-wrap: balance;
 }
 @utility title {
-  font-size: clamp(2rem, 4vw, 3.25rem);
-  line-height: 1.08;
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+  text-wrap: balance;
+}
+@utility statement {
+  font-size: clamp(2.25rem, 5vw, 4.5rem);
+  line-height: 1.15;
   letter-spacing: -0.03em;
-  font-weight: 700;
+  font-weight: 500;
   text-wrap: balance;
 }
 @utility lede {
-  font-size: 1.125rem;
-  line-height: 1.6;
+  font-size: 1.1875rem;
+  line-height: 1.55;
   text-wrap: pretty;
+}
+@utility mono-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 /* Translucent chrome: content scrolls underneath, the bright top edge reads as light on the material. */
@@ -79,7 +84,7 @@ body { background: var(--bg); color: var(--ink); }
 }
 
 @utility press {
-  transition: transform 120ms ease-out, background-color 150ms ease, color 150ms ease;
+  transition: transform 120ms ease-out, background-color 150ms ease, color 150ms ease, border-color 150ms ease;
   &:active { transform: scale(0.97); }
 }
 
@@ -89,16 +94,21 @@ body { background: var(--bg); color: var(--ink); }
 }
 
 @media (prefers-reduced-transparency: reduce) {
-  :root { --glass: var(--surface); }
+  :root { --glass: var(--bg); }
   .glass { backdrop-filter: none; -webkit-backdrop-filter: none; }
 }
 
 @media (prefers-contrast: more) {
-  :root { --glass: var(--surface); }
+  :root { --glass: var(--bg); }
   .glass { backdrop-filter: none; -webkit-backdrop-filter: none; outline: 1px solid var(--ink); }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .press:active { transform: none; }
+}
+
+/* Elements GSAP reveals start hidden, but only when motion is allowed; reduced motion and no-JS show them as-is. */
+@media (prefers-reduced-motion: no-preference) {
+  .gsap-in { visibility: hidden; }
 }

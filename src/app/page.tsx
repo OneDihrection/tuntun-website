@@ -7,8 +7,8 @@ import { Hero } from "@/components/Hero";
 import { HowItWorks } from "@/components/HowItWorks";
 import { Navbar } from "@/components/Navbar";
 import { Partners } from "@/components/Partners";
-import { Pillars } from "@/components/Pillars";
 import { Privacy } from "@/components/Privacy";
+import { Statement } from "@/components/Statement";
 
 export default function Home() {
   return (
@@ -16,13 +16,13 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <Pillars />
+        <Statement />
         <Exercises />
         <HowItWorks />
         <Features />
         <Privacy />
-        <Partners />
         <Faq />
+        <Partners />
         <Closing />
       </main>
       <Footer />

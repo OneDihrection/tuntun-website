@@ -1,26 +1,58 @@
 "use client";
 
+import { useRef } from "react";
 import { useLanguage } from "@/i18n/LanguageProvider";
-import { Reveal, SectionHeader } from "./ui";
+import { gsap, MOTION_OK, useGSAP } from "@/lib/gsap";
+import { SectionHeader } from "./ui";
 
 export function HowItWorks() {
   const { t } = useLanguage();
+  const scope = useRef<HTMLElement>(null);
+
+  useGSAP(
+    () => {
+      const mm = gsap.matchMedia();
+      mm.add(MOTION_OK, () => {
+        // Each row draws its rule across, then its number rises out of the line and the text follows.
+        gsap.utils.toArray<HTMLElement>("[data-step]").forEach((row) => {
+          gsap
+            .timeline({ scrollTrigger: { trigger: row, start: "top 85%", toggleActions: "play none none none" } })
+            .set(row, { visibility: "visible" })
+            .from(row.querySelector("[data-line]"), { scaleX: 0, duration: 1.1, ease: "expo.inOut" })
+            .from(row.querySelector("[data-num]"), { yPercent: 100, duration: 0.9, ease: "expo.out" }, 0.35)
+            .from(row.querySelectorAll("[data-text]"), { y: 16, autoAlpha: 0, stagger: 0.08, duration: 0.8, ease: "expo.out" }, 0.45);
+        });
+      });
+    },
+    { scope },
+  );
+
   return (
-    <section id="cara-kerja" className="bg-surface py-24 sm:py-32">
+    <section ref={scope} id="cara-kerja" className="py-40 sm:py-56">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <SectionHeader eyebrow={t.how.eyebrow} title={t.how.title} />
-        {/* On wide screens one line runs through the step numbers. */}
-        <ol className="relative mt-14 grid gap-10 before:absolute before:inset-x-5 before:top-5 before:hidden before:h-px before:bg-ink/10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8 lg:before:block">
+        <SectionHeader center eyebrow={t.how.eyebrow} title={t.how.title} />
+        <ol className="mt-24 border-t border-ink/15">
           {t.how.steps.map((step, i) => (
-            <Reveal as="li" key={step.title} delay={i * 0.08} className="relative">
-              <span
-                className={`relative grid size-10 place-items-center rounded-full text-sm font-bold tabular-nums ring-4 ring-surface ${i === 2 ? "bg-yellow text-night" : "bg-blue-soft text-blue-ink"}`}
-              >
-                {i + 1}
+            <li
+              key={step.title}
+              data-step
+              className="gsap-in relative grid gap-4 py-12 sm:grid-cols-[minmax(10rem,14rem)_1fr] sm:items-center sm:gap-12 sm:py-16"
+            >
+              <span aria-hidden data-line className="absolute inset-x-0 bottom-0 h-px origin-left bg-ink/15" />
+              <span className="block overflow-hidden">
+                <span data-num className={`display block tabular-nums ${i === 2 ? "text-yellow-pressed" : "text-ink/25"}`}>
+                  {String(i + 1).padStart(2, "0")}
+                </span>
               </span>
-              <h3 className="mt-6 text-lg font-bold tracking-[-0.015em]">{step.title}</h3>
-              <p className="mt-2 text-[0.9375rem] leading-relaxed text-ink/60">{step.desc}</p>
-            </Reveal>
+              <div>
+                <h3 data-text className="text-3xl font-medium tracking-[-0.03em] sm:text-5xl">
+                  {step.title}
+                </h3>
+                <p data-text className="mt-3 text-lg text-ink/55 sm:text-xl">
+                  {step.desc}
+                </p>
+              </div>
+            </li>
           ))}
         </ol>
       </div>

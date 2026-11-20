@@ -12,25 +12,25 @@ export function Faq() {
   const base = useId();
 
   return (
-    <section id="faq" className="bg-surface py-24 sm:py-32">
-      <div className="mx-auto grid max-w-6xl gap-10 px-5 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-        <SectionHeader eyebrow={t.faq.eyebrow} title={t.faq.title} />
-        <ul className="border-t border-ink/10">
+    <section id="faq" className="py-40 sm:py-56">
+      <div className="mx-auto max-w-4xl px-5 sm:px-8">
+        <SectionHeader center eyebrow={t.faq.eyebrow} title={t.faq.title} />
+        <ul className="mt-20 border-t border-ink/15">
           {t.faq.items.map((item, i) => {
             const isOpen = open === i;
             const panel = `${base}-${i}`;
             return (
-              <li key={item.q} className="border-b border-ink/10">
+              <li key={item.q} className="border-b border-ink/15">
                 <h3>
                   <button
                     type="button"
                     aria-expanded={isOpen}
                     aria-controls={panel}
                     onClick={() => setOpen(isOpen ? null : i)}
-                    className="flex w-full items-center justify-between gap-6 py-5 text-left text-[1.0625rem] font-semibold tracking-[-0.01em]"
+                    className="flex w-full items-center justify-between gap-6 py-6 text-left text-lg font-medium tracking-[-0.015em] sm:text-xl"
                   >
                     {item.q}
-                    <motion.span animate={{ rotate: isOpen ? 45 : 0 }} className="grid size-8 shrink-0 place-items-center rounded-full bg-ink/5">
+                    <motion.span animate={{ rotate: isOpen ? 45 : 0 }} className="grid size-8 shrink-0 place-items-center rounded-full bg-chip">
                       <Plus className="size-4" />
                     </motion.span>
                   </button>

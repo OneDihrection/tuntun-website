@@ -2,32 +2,39 @@
 
 import { motion } from "motion/react";
 
-export const buttonPrimary =
-  "press inline-flex items-center justify-center gap-2 rounded-full bg-yellow px-6 py-3.5 text-[0.9375rem] font-semibold text-night hover:bg-[#ffc533] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-ink";
+const focus = "focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-ink";
 
-export const buttonSecondary =
-  "press inline-flex items-center justify-center gap-2 rounded-full bg-surface px-6 py-3.5 text-[0.9375rem] font-semibold ring-1 ring-ink/10 hover:ring-ink/25 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-ink";
+/** Ink pill: the one primary action per view. */
+export const buttonPrimary = `press inline-flex items-center justify-center gap-2 rounded-full bg-ink px-7 py-4 text-base font-medium text-bg hover:opacity-85 ${focus}`;
+
+/** Beige pill, Labs' secondary action. */
+export const buttonChip = `press inline-flex items-center justify-center gap-2 rounded-full bg-chip px-7 py-4 text-base font-medium hover:brightness-95 ${focus}`;
+
+/** Outlined circle for carousel arrows. */
+export const buttonCircle = `press grid size-14 place-items-center rounded-full border border-ink/20 hover:border-ink/50 disabled:pointer-events-none disabled:opacity-30 ${focus}`;
 
 export function Eyebrow({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return <p className={`text-sm font-semibold tracking-[0.01em] text-blue-ink ${className}`}>{children}</p>;
+  return <p className={`mono-label font-medium text-ink/70 ${className}`}>{children}</p>;
 }
 
 export function SectionHeader({
   eyebrow,
   title,
   sub,
+  center = false,
   className = "",
 }: {
   eyebrow: string;
   title: string;
   sub?: string;
+  center?: boolean;
   className?: string;
 }) {
   return (
-    <Reveal className={`max-w-3xl ${className}`}>
+    <Reveal className={`${center ? "mx-auto max-w-4xl text-center" : "max-w-3xl"} ${className}`}>
       <Eyebrow>{eyebrow}</Eyebrow>
-      <h2 className="title mt-3">{title}</h2>
-      {sub && <p className="lede mt-5 max-w-2xl text-ink/65">{sub}</p>}
+      <h2 className="title mt-5">{title}</h2>
+      {sub && <p className={`lede mt-6 max-w-2xl text-ink/65 ${center ? "mx-auto" : ""}`}>{sub}</p>}
     </Reveal>
   );
 }

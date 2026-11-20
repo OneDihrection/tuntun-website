@@ -14,7 +14,7 @@ export function LanguageToggle() {
   const { locale, setLocale, t } = useLanguage();
   const pill = useId();
   return (
-    <div role="group" aria-label={t.nav.language} className="flex rounded-full bg-ink/6 p-0.5 text-xs font-semibold">
+    <div role="group" aria-label={t.nav.language} className="flex rounded-full bg-chip p-0.5 text-xs font-medium">
       {locales.map((l) => (
         <button
           key={l}
@@ -60,15 +60,15 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50">
       {/* The edge only appears once content scrolls underneath the bar. */}
-      <div className={`glass absolute inset-0 transition-[border-color] duration-200 border-b ${scrolled || open ? "border-ink/10" : "border-transparent"}`} />
-      <nav className="relative mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
+      <div className={`absolute inset-0 border-b transition-[opacity,border-color] duration-200 ${scrolled || open ? "glass border-ink/10" : "border-transparent"}`} />
+      <nav className="relative mx-auto flex h-18 max-w-[90rem] items-center justify-between gap-4 px-5 sm:px-8">
         <Link href="/" aria-label="Tuntun" onClick={() => setOpen(false)} className="press">
           <Logo />
         </Link>
         <ul className="hidden items-center gap-7 lg:flex">
           {links.map((link) => (
             <li key={link.href}>
-              <a href={link.href} className="text-sm font-medium text-ink/65 transition-colors hover:text-ink">
+              <a href={link.href} className="text-[0.9375rem] font-medium text-ink/80 transition-colors hover:text-ink">
                 {link.label}
               </a>
             </li>
@@ -99,7 +99,7 @@ export function Navbar() {
           <>
             <motion.div
               key="scrim"
-              className="fixed inset-0 top-16 bg-night/30 lg:hidden"
+              className="fixed inset-0 top-18 bg-night/30 lg:hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}

@@ -1,46 +1,72 @@
 "use client";
 
 import Link from "next/link";
+import { useRef } from "react";
 import { useLanguage } from "@/i18n/LanguageProvider";
+import { floatPieces, gsap, MOTION_OK, useGSAP } from "@/lib/gsap";
 import { ArrowRight, CloudOff, Mic, VideoOff } from "./Icons";
+import { Shape } from "./Shapes";
 import { Reveal } from "./ui";
 
 const icons = [VideoOff, Mic, CloudOff];
 
-/** Always dark, in both appearances: a deliberate pause in the page for the trust message. */
+/** An inset dark block in both appearances: a deliberate pause in the page for the trust message. */
 export function Privacy() {
   const { t } = useLanguage();
+  const scope = useRef<HTMLElement>(null);
+
+  // The block rises into place as it scrolls in: it grows to full width while its corners tighten.
+  useGSAP(
+    () => {
+      const mm = gsap.matchMedia();
+      mm.add(MOTION_OK, () => {
+        gsap.fromTo(
+          "[data-block]",
+          { scale: 0.92, borderRadius: "4.5rem" },
+          { scale: 1, borderRadius: "2.5rem", ease: "none", scrollTrigger: { trigger: scope.current, start: "top bottom", end: "top 35%", scrub: true } },
+        );
+        floatPieces(gsap.utils.toArray<HTMLElement>("[data-float]"), { strength: 1.4 });
+      });
+    },
+    { scope },
+  );
+
   return (
-    <section id="privasi" className="bg-night py-24 text-white sm:py-32 dark:bg-[#111113] dark:ring-1 dark:ring-white/5">
-      <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <Reveal className="max-w-2xl">
-          <p className="text-sm font-semibold text-yellow">{t.privacy.eyebrow}</p>
-          <h2 className="title mt-3">{t.privacy.title}</h2>
-          <p className="lede mt-5 text-white/65">{t.privacy.sub}</p>
-        </Reveal>
+    <section ref={scope} id="privasi" className="px-3 sm:px-6">
+      <div data-block className="relative isolate mx-auto max-w-[90rem] overflow-hidden rounded-[2.5rem] bg-night px-5 py-32 text-white sm:px-8 sm:py-48">
+        <div aria-hidden className="absolute -right-24 -top-24 -z-10 size-80 text-blue/25">
+          <div data-float className="size-full">
+            <Shape kind="circle" />
+          </div>
+        </div>
+        <div className="mx-auto max-w-6xl">
+          <Reveal className="mx-auto max-w-3xl text-center">
+            <p className="mono-label font-medium text-yellow">{t.privacy.eyebrow}</p>
+            <h2 className="title mt-5">{t.privacy.title}</h2>
+          </Reveal>
 
-        <ul className="mt-14 grid gap-4 md:grid-cols-3">
-          {t.privacy.points.map((p, i) => {
-            const Icon = icons[i];
-            return (
-              <Reveal as="li" key={p.title} delay={i * 0.06} className="rounded-3xl bg-white/6 p-7 ring-1 ring-white/10 sm:p-8">
-                <span className="grid size-11 place-items-center rounded-2xl bg-white/10 text-yellow">
-                  <Icon className="size-5" />
-                </span>
-                <h3 className="mt-5 text-lg font-bold tracking-[-0.015em]">{p.title}</h3>
-                <p className="mt-2 text-[0.9375rem] leading-relaxed text-white/60">{p.desc}</p>
-              </Reveal>
-            );
-          })}
-        </ul>
+          <ul className="mt-20 grid gap-4 md:grid-cols-3">
+            {t.privacy.points.map((p, i) => {
+              const Icon = icons[i];
+              return (
+                <Reveal as="li" key={p.title} delay={i * 0.06} className="flex flex-col items-center rounded-[2rem] bg-white/7 px-8 py-16 text-center">
+                  <span className="grid size-20 place-items-center rounded-full bg-white/10 text-yellow">
+                    <Icon className="size-8" />
+                  </span>
+                  <h3 className="mt-8 text-2xl font-medium tracking-[-0.02em] sm:text-[1.75rem]">{p.title}</h3>
+                </Reveal>
+              );
+            })}
+          </ul>
 
-        <Reveal className="mt-10 flex flex-col gap-6 border-t border-white/10 pt-8 md:flex-row md:items-center md:justify-between">
-          <p className="max-w-2xl text-sm leading-relaxed text-white/55">{t.privacy.disclaimer}</p>
-          <Link href="/privasi" className="press inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-white hover:text-yellow">
-            {t.privacy.readMore}
-            <ArrowRight className="size-4" />
-          </Link>
-        </Reveal>
+          <Reveal className="mt-20 flex flex-col items-center gap-8 text-center">
+            <p className="max-w-2xl text-lg text-white/60">{t.privacy.disclaimer}</p>
+            <Link href="/privasi" className="press inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3 text-sm font-medium hover:border-white/60">
+              {t.privacy.readMore}
+              <ArrowRight className="size-4" />
+            </Link>
+          </Reveal>
+        </div>
       </div>
     </section>
   );
