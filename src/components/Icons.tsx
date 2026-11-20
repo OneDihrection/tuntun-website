@@ -107,3 +107,46 @@ export function Mail({ className }: IconProps) {
     </svg>
   );
 }
+
+export function Cube({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" {...base} className={className}>
+      <path d="M12 3 4 7.5v9L12 21l8-4.5v-9L12 3Z" />
+      <path d="m4 7.5 8 4.5 8-4.5M12 12v9" />
+    </svg>
+  );
+}
+
+export function Speaker({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" {...base} className={className}>
+      <path d="M11 5 6 9H3v6h3l5 4V5Z" />
+      <path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13" />
+    </svg>
+  );
+}
+
+export function Camera({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" {...base} className={className}>
+      <path d="M4 8a2 2 0 0 1 2-2h1.5l1.5-2h6l1.5 2H18a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8Z" />
+      <circle cx="12" cy="12.5" r="3.5" />
+    </svg>
+  );
+}
+
+export function ChevronLeft({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" {...base} className={className}>
+      <path d="m15 5-7 7 7 7" />
+    </svg>
+  );
+}
+
+export function ChevronRight({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" {...base} className={className}>
+      <path d="m9 5 7 7-7 7" />
+    </svg>
+  );
+}

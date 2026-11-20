@@ -5,7 +5,7 @@ import { Navbar } from "@/components/Navbar";
 
 export const metadata: Metadata = {
   title: "Syarat dan Ketentuan",
-  description: "Syarat dan ketentuan penggunaan aplikasi TeMan: Terapi Mandiri dan situs ini.",
+  description: "Syarat dan ketentuan penggunaan aplikasi Tuntun: Teman Terapi dan situs ini.",
   alternates: { canonical: "/ketentuan" },
 };
 

@@ -3,8 +3,8 @@
 import { createContext, useCallback, useContext, useEffect, useSyncExternalStore } from "react";
 import { dictionaries, type Dictionary, type Locale } from "./dictionary";
 
-const STORAGE_KEY = "teman-locale";
-const CHANGE_EVENT = "teman-locale-change";
+const STORAGE_KEY = "tuntun-locale";
+const CHANGE_EVENT = "tuntun-locale-change";
 
 type LanguageContextValue = {
   locale: Locale;

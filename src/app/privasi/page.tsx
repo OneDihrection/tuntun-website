@@ -5,7 +5,7 @@ import { Navbar } from "@/components/Navbar";
 
 export const metadata: Metadata = {
   title: "Kebijakan Privasi",
-  description: "Bagaimana aplikasi TeMan dan situs ini menangani data Anda: tanpa akun, tanpa rekaman video, tanpa cloud.",
+  description: "Bagaimana aplikasi Tuntun dan situs ini menangani data Anda: tanpa akun, tanpa cloud, data latihan tetap di iPad.",
   alternates: { canonical: "/privasi" },
 };
 

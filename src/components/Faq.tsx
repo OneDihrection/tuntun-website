@@ -1,32 +1,59 @@
 "use client";
 
+import { AnimatePresence, motion } from "motion/react";
+import { useId, useState } from "react";
 import { useLanguage } from "@/i18n/LanguageProvider";
-import { Eyebrow } from "./Decor";
 import { Plus } from "./Icons";
+import { SectionHeader } from "./ui";
 
 export function Faq() {
   const { t } = useLanguage();
+  const [open, setOpen] = useState<number | null>(0);
+  const base = useId();
 
   return (
-    <section id="faq" className="bg-cream py-16 sm:py-24">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6">
-        <div className="text-center">
-          <Eyebrow>{t.faq.eyebrow}</Eyebrow>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-5xl">{t.faq.title}</h2>
-        </div>
-        <div className="mt-10 flex flex-col gap-3">
-          {t.faq.items.map((item) => (
-            <details key={item.q} className="group rounded-3xl bg-white p-1 ring-1 ring-ink/5 open:bg-brand-light">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded-[1.25rem] px-5 py-4 text-lg font-bold [&::-webkit-details-marker]:hidden">
-                {item.q}
-                <span className="grid size-9 shrink-0 place-items-center rounded-full bg-brand-light text-brand-dark transition-transform group-open:rotate-45">
-                  <Plus className="size-5" />
-                </span>
-              </summary>
-              <p className="px-5 pb-5 leading-relaxed text-ink/75">{item.a}</p>
-            </details>
-          ))}
-        </div>
+    <section id="faq" className="bg-surface py-24 sm:py-32">
+      <div className="mx-auto grid max-w-6xl gap-10 px-5 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+        <SectionHeader eyebrow={t.faq.eyebrow} title={t.faq.title} />
+        <ul className="border-t border-ink/10">
+          {t.faq.items.map((item, i) => {
+            const isOpen = open === i;
+            const panel = `${base}-${i}`;
+            return (
+              <li key={item.q} className="border-b border-ink/10">
+                <h3>
+                  <button
+                    type="button"
+                    aria-expanded={isOpen}
+                    aria-controls={panel}
+                    onClick={() => setOpen(isOpen ? null : i)}
+                    className="flex w-full items-center justify-between gap-6 py-5 text-left text-[1.0625rem] font-semibold tracking-[-0.01em]"
+                  >
+                    {item.q}
+                    <motion.span animate={{ rotate: isOpen ? 45 : 0 }} className="grid size-8 shrink-0 place-items-center rounded-full bg-ink/5">
+                      <Plus className="size-4" />
+                    </motion.span>
+                  </button>
+                </h3>
+                {/* Height springs from its current value, so rapid toggles reverse mid-flight. */}
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      id={panel}
+                      role="region"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="overflow-hidden"
+                    >
+                      <p className="max-w-xl pb-6 pr-12 text-[0.9375rem] leading-relaxed text-ink/65">{item.a}</p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </section>
   );
