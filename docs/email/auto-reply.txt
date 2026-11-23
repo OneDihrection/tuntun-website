@@ -1,0 +1,260 @@
+TUNTUN SUPPORT AUTO-REPLY
+For: contact@tuntun.rehab
+Edit before use: response time ("1–2 hari kerja / 1–2 business days") and domain (https://www.tuntun.rehab)
+
+HOW TO USE
+- Hostinger Email auto-reply only sends plain text. Paste section 1 into
+  "Subject" and section 2 into "Message". Do NOT paste section 3 there:
+  the HTML tags would show up as raw text.
+- Section 3 (HTML) is only for tools that accept HTML source, e.g. a
+  helpdesk, an email-marketing tool, or an "insert HTML" option in a mail client.
+- Images use https://www.tuntun.rehab (the bare domain redirects, and many
+  email clients don't follow image redirects).
+
+
+=====================================================================
+1. SUBJECT
+=====================================================================
+
+Pesan Anda sudah kami terima · We've received your message — Tuntun
+
+
+=====================================================================
+2. PLAIN-TEXT CONTENT
+=====================================================================
+
+Halo,
+
+Terima kasih telah menghubungi Tuntun: Teman Terapi. Pesan Anda sudah kami terima dan akan dibaca langsung oleh tim kami.
+
+Kami biasanya membalas dalam 1–2 hari kerja (Senin–Jumat).
+
+Agar kami bisa membantu lebih cepat, balas email ini dengan:
+- Model iPad dan versi iPadOS
+- Versi aplikasi Tuntun
+- Langkah yang Anda lakukan sebelum masalah muncul
+- Tangkapan layar atau rekaman layar, jika ada
+
+PENTING: Tuntun bukan layanan darurat. Jika Anda atau orang terdekat mengalami gejala stroke (wajah mencong, lengan lemah, bicara pelo), segera hubungi 112 atau 119, atau pergi ke IGD terdekat.
+
+Salam hangat,
+Tim Tuntun
+
+---------------------------------------------------------------------
+
+Hello,
+
+Thank you for contacting Tuntun: Teman Terapi. We've received your message, and a member of our team will read it personally.
+
+We usually reply within 1–2 business days (Monday–Friday).
+
+To help us help you faster, reply to this email with:
+- Your iPad model and iPadOS version
+- Your Tuntun app version
+- The steps you took before the issue appeared
+- A screenshot or screen recording, if you have one
+
+IMPORTANT: Tuntun is not an emergency service. If you or someone near you shows signs of a stroke (face drooping, arm weakness, slurred speech), call 112 or 119 right away, or go to the nearest emergency room.
+
+Warm regards,
+The Tuntun Team
+
+---------------------------------------------------------------------
+Tuntun: Teman Terapi · https://www.tuntun.rehab
+Privasi / Privacy: https://www.tuntun.rehab/privasi
+Ini adalah pesan otomatis. This is an automated message.
+
+
+=====================================================================
+3. FORMATTED HTML (paste into the provider's HTML / source editor)
+=====================================================================
+
+<!DOCTYPE html>
+<html lang="id" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="x-apple-disable-message-reformatting">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>Pesan Anda sudah kami terima — Tuntun</title>
+<!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
+<style>
+  body { margin:0; padding:0; width:100% !important; -webkit-text-size-adjust:100%; }
+  a { color:#1D68B8; }
+  @media only screen and (max-width:620px) {
+    .container { width:100% !important; }
+    .px { padding-left:24px !important; padding-right:24px !important; }
+  }
+  @media (prefers-color-scheme: dark) {
+    .bg { background-color:#111111 !important; }
+    .card { background-color:#1A1A1A !important; }
+    .ink { color:#F2F0EB !important; }
+    .muted { color:#A8A39A !important; }
+    .box { background-color:#26231D !important; }
+    .alert { background-color:#2A2111 !important; border-color:#FFB700 !important; }
+    .rule { border-color:#333333 !important; }
+  }
+</style>
+</head>
+<body class="bg" style="margin:0; padding:0; background-color:#F2F0EB;">
+
+<!-- Preheader (hidden) -->
+<div style="display:none; max-height:0; overflow:hidden; mso-hide:all; font-size:1px; line-height:1px; color:#F2F0EB;">
+Kami akan membalas dalam 1–2 hari kerja. We'll reply within 1–2 business days.&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;
+</div>
+
+<table role="presentation" class="bg" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#F2F0EB;">
+<tr>
+<td align="center" style="padding:32px 12px;">
+
+  <!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
+  <table role="presentation" class="container" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px; max-width:600px;">
+
+    <!-- Header -->
+    <tr>
+      <td class="px" style="padding:0 40px 20px 40px;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td style="vertical-align:middle;">
+              <img src="https://www.tuntun.rehab/logo.png" width="40" height="40" alt="Tuntun" style="display:block; border:0; border-radius:10px;">
+            </td>
+            <td class="ink" style="vertical-align:middle; padding-left:12px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:17px; font-weight:700; color:#1A1A1A;">
+              Tuntun<span class="muted" style="font-weight:400; color:#6B665E;">&nbsp;·&nbsp;Teman Terapi</span>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <!-- Card -->
+    <tr>
+      <td class="card" style="background-color:#FFFFFF; border-radius:20px; overflow:hidden;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+
+          <!-- Accent bar -->
+          <tr><td style="height:6px; line-height:6px; font-size:6px; background-color:#FFB700;">&nbsp;</td></tr>
+
+          <!-- ===== Bahasa Indonesia ===== -->
+          <tr>
+            <td class="px ink" style="padding:36px 40px 0 40px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; color:#1A1A1A;">
+              <p style="margin:0 0 6px 0; font-size:12px; letter-spacing:1px; text-transform:uppercase; color:#1D68B8; font-weight:600;">Pesan diterima</p>
+              <h1 style="margin:0 0 16px 0; font-size:24px; line-height:32px; font-weight:700;">Terima kasih telah menghubungi kami.</h1>
+              <p style="margin:0 0 16px 0; font-size:16px; line-height:26px;">
+                Halo,<br><br>
+                Pesan Anda untuk <strong>Tuntun: Teman Terapi</strong> sudah kami terima dan akan dibaca langsung oleh tim kami. Kami biasanya membalas dalam <strong>1–2 hari kerja</strong> (Senin–Jumat).
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td class="px" style="padding:4px 40px 0 40px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td class="box ink" style="background-color:#F2F0EB; border-radius:14px; padding:20px 24px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; color:#1A1A1A; font-size:15px; line-height:24px;">
+                    <strong>Agar kami bisa membantu lebih cepat,</strong> balas email ini dengan:
+                    <ul style="margin:8px 0 0 0; padding-left:20px;">
+                      <li>Model iPad dan versi iPadOS</li>
+                      <li>Versi aplikasi Tuntun</li>
+                      <li>Langkah yang Anda lakukan sebelum masalah muncul</li>
+                      <li>Tangkapan layar atau rekaman layar, jika ada</li>
+                    </ul>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="px" style="padding:16px 40px 0 40px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td class="alert ink" style="background-color:#FFF6DC; border-left:4px solid #FFB700; border-radius:8px; padding:16px 20px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; color:#1A1A1A; font-size:14px; line-height:22px;">
+                    <strong>Penting:</strong> Tuntun bukan layanan darurat. Jika Anda atau orang terdekat mengalami gejala stroke (wajah mencong, lengan lemah, bicara pelo), segera hubungi <strong>112</strong> atau <strong>119</strong>, atau pergi ke IGD terdekat.
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="px ink" style="padding:24px 40px 32px 40px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; color:#1A1A1A; font-size:16px; line-height:26px;">
+              Salam hangat,<br><strong>Tim Tuntun</strong>
+            </td>
+          </tr>
+
+          <!-- Divider -->
+          <tr>
+            <td class="px" style="padding:0 40px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr><td class="rule" style="border-top:1px solid #E7E1D7; font-size:0; line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ===== English ===== -->
+          <tr>
+            <td class="px ink" lang="en" style="padding:32px 40px 0 40px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; color:#1A1A1A;">
+              <p style="margin:0 0 6px 0; font-size:12px; letter-spacing:1px; text-transform:uppercase; color:#1D68B8; font-weight:600;">Message received</p>
+              <h2 style="margin:0 0 16px 0; font-size:20px; line-height:28px; font-weight:700;">Thank you for reaching out.</h2>
+              <p style="margin:0 0 16px 0; font-size:16px; line-height:26px;">
+                Hello,<br><br>
+                We've received your message to <strong>Tuntun: Teman Terapi</strong>, and a member of our team will read it personally. We usually reply within <strong>1–2 business days</strong> (Monday–Friday).
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td class="px" style="padding:4px 40px 0 40px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td class="box ink" lang="en" style="background-color:#F2F0EB; border-radius:14px; padding:20px 24px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; color:#1A1A1A; font-size:15px; line-height:24px;">
+                    <strong>To help us help you faster,</strong> reply to this email with:
+                    <ul style="margin:8px 0 0 0; padding-left:20px;">
+                      <li>Your iPad model and iPadOS version</li>
+                      <li>Your Tuntun app version</li>
+                      <li>The steps you took before the issue appeared</li>
+                      <li>A screenshot or screen recording, if you have one</li>
+                    </ul>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="px" style="padding:16px 40px 0 40px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td class="alert ink" lang="en" style="background-color:#FFF6DC; border-left:4px solid #FFB700; border-radius:8px; padding:16px 20px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; color:#1A1A1A; font-size:14px; line-height:22px;">
+                    <strong>Important:</strong> Tuntun is not an emergency service. If you or someone near you shows signs of a stroke (face drooping, arm weakness, slurred speech), call <strong>112</strong> or <strong>119</strong> right away, or go to the nearest emergency room.
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="px ink" lang="en" style="padding:24px 40px 36px 40px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; color:#1A1A1A; font-size:16px; line-height:26px;">
+              Warm regards,<br><strong>The Tuntun Team</strong>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+
+    <!-- Footer -->
+    <tr>
+      <td class="px muted" align="center" style="padding:24px 40px 0 40px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:12px; line-height:20px; color:#6B665E;">
+        <a href="https://www.tuntun.rehab" style="color:#1D68B8; text-decoration:none; font-weight:600;">tuntun.rehab</a>
+        &nbsp;·&nbsp;
+        <a href="https://www.tuntun.rehab/privasi" style="color:#1D68B8; text-decoration:none;">Privasi / Privacy</a>
+        <br>
+        Ini adalah pesan otomatis. This is an automated message.<br>
+        © Tuntun: Teman Terapi
+      </td>
+    </tr>
+
+  </table>
+  <!--[if mso]></td></tr></table><![endif]-->
+
+</td>
+</tr>
+</table>
+</body>
+</html>
