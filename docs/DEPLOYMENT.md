@@ -21,10 +21,10 @@ Throughout the guide, `yourdomain.com` stands in for your real domain. Replace i
 
 Do these before the first production deploy:
 
-1. **Set the real contact email.** In `src/config.ts`, replace the placeholder:
+1. **Confirm the contact email.** In `src/config.ts`, it is already set to the support inbox:
 
    ```ts
-   export const CONTACT_EMAIL = "halo@example.com"; // change this
+   export const CONTACT_EMAIL = "support@tuntun.rehab";
    ```
 
 2. **Check that the production build passes locally:**

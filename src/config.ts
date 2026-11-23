@@ -1,5 +1,4 @@
-// Replace with the team's real inbox before launch.
-export const CONTACT_EMAIL = "halo@example.com";
+export const CONTACT_EMAIL = "support@tuntun.rehab";
 
 export const SITE_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
   ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
