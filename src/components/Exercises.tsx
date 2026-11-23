@@ -3,7 +3,7 @@
 import { animate, motion, useMotionValue, useMotionValueEvent, useReducedMotion, useTransform, type MotionValue } from "motion/react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { exerciseGroups, type ExerciseGroupKey } from "@/i18n/dictionary";
+import { exerciseGroups } from "@/i18n/dictionary";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import { ChevronLeft, ChevronRight } from "./Icons";
 import { buttonCircle, SectionHeader } from "./ui";
@@ -16,10 +16,11 @@ const project = (velocity: number, rate = 0.998) => ((velocity / 1000) * rate) /
 /** Progressive resistance past the first and last card, in card units. */
 const rubberband = (overshoot: number, c = 0.55) => (overshoot * c) / (1 + c * Math.abs(overshoot));
 
+/** Every exercise in one row, in catalog order, each keeping its group's artwork style. */
+const exercises = exerciseGroups.flatMap((g) => g.items.map((key) => ({ key, art: g.art })));
+
 export function Exercises() {
   const { t } = useLanguage();
-  const [active, setActive] = useState<ExerciseGroupKey>("hand");
-  const group = exerciseGroups.find((g) => g.key === active)!;
 
   return (
     <section id="latihan" className="overflow-hidden py-40 sm:py-56">
@@ -27,46 +28,23 @@ export function Exercises() {
         <SectionHeader center eyebrow={t.exercises.eyebrow} title={t.exercises.title} />
       </div>
 
-      <Fan key={active} groupKey={active} items={group.items} art={group.art} />
-
-      {/* Group picker: one evenly spaced row of pills, the selected one in ink. */}
-      <div className="mx-auto mt-24 max-w-4xl px-5 sm:px-8">
-        <p id="exercise-groups" className="mono-label text-center text-ink/55">
-          {t.exercises.groupsLabel}
-        </p>
-        <div role="group" aria-labelledby="exercise-groups" className="mt-8 flex flex-wrap justify-center gap-3">
-          {exerciseGroups.map((g) => (
-            <button
-              key={g.key}
-              type="button"
-              aria-pressed={active === g.key}
-              onClick={() => setActive(g.key)}
-              className={`press rounded-full px-7 py-4 text-base font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink sm:text-lg ${
-                active === g.key ? "bg-ink text-bg" : "bg-chip text-ink hover:brightness-95"
-              }`}
-            >
-              {t.exercises.groups[g.key].name}
-            </button>
-          ))}
-        </div>
-      </div>
+      <Carousel />
     </section>
   );
 }
 
-function Fan({ groupKey, items, art }: { groupKey: ExerciseGroupKey; items: readonly string[]; art: "hands" | "plans" }) {
+function Carousel() {
   const { t } = useLanguage();
   const reduce = useReducedMotion();
-  // Open on the middle card so the fan spreads to both sides.
-  const middle = Math.floor((items.length - 1) / 2);
+  // Open on the middle card so the row spreads to both sides.
+  const middle = Math.floor((exercises.length - 1) / 2);
   const pos = useMotionValue(middle);
   const [index, setIndex] = useState(middle);
   const [cardW, setCardW] = useState(300);
   const stage = useRef<HTMLDivElement>(null);
   const gesture = useRef<{ x: number; y: number; from: number; dragging: boolean; samples: { x: number; t: number }[] } | null>(null);
-  const dragged = useRef(false);
-  const last = items.length - 1;
-  const spacing = cardW * 0.8;
+  const last = exercises.length - 1;
+  const spacing = cardW + 24;
 
   useMotionValueEvent(pos, "change", (v) => setIndex(clamp(Math.round(v), 0, last)));
 
@@ -81,13 +59,12 @@ function Fan({ groupKey, items, art }: { groupKey: ExerciseGroupKey; items: read
   const settle = (target: number, velocity = 0) => {
     const to = clamp(target, 0, last);
     if (reduce) return pos.set(to);
-    // A flick carries its velocity into a slightly bouncy settle; a tap or arrow press stays critically damped.
+    // A flick carries its velocity into a slightly bouncy settle; an arrow press stays critically damped.
     animate(pos, to, { type: "spring", velocity, bounce: velocity ? 0.2 : 0, duration: 0.6 });
   };
 
   const onPointerDown = (e: React.PointerEvent) => {
-    pos.stop(); // Interrupt mid-flight: the next motion starts from where the fan is now.
-    dragged.current = false;
+    pos.stop(); // Interrupt mid-flight: the next motion starts from where the row is now.
     gesture.current = { x: e.clientX, y: e.clientY, from: pos.get(), dragging: false, samples: [{ x: e.clientX, t: e.timeStamp }] };
   };
 
@@ -99,7 +76,6 @@ function Fan({ groupKey, items, art }: { groupKey: ExerciseGroupKey; items: read
       // Commit to a horizontal drag only after 10px, and only if it's more sideways than vertical.
       if (Math.abs(dx) < 10 || Math.abs(dx) < Math.abs(e.clientY - g.y)) return;
       g.dragging = true;
-      dragged.current = true;
       e.currentTarget.setPointerCapture(e.pointerId);
     }
     let p = g.from - dx / spacing;
@@ -126,7 +102,7 @@ function Fan({ groupKey, items, art }: { groupKey: ExerciseGroupKey; items: read
         ref={stage}
         role="region"
         aria-roledescription="carousel"
-        aria-label={t.exercises.groups[groupKey].name}
+        aria-label={t.exercises.title}
         tabIndex={0}
         onKeyDown={(e) => {
           if (e.key === "ArrowRight") settle(index + 1);
@@ -138,23 +114,19 @@ function Fan({ groupKey, items, art }: { groupKey: ExerciseGroupKey; items: read
         onPointerCancel={onPointerUp}
         className="relative isolate h-[30rem] cursor-grab touch-pan-y select-none focus-visible:outline-none active:cursor-grabbing sm:h-[38rem]"
       >
-        {items.map((key, i) => {
-          const item = t.exercises.items[key as keyof typeof t.exercises.items];
-          return (
-            <FanCard
-              key={key}
-              i={i}
-              pos={pos}
-              spacing={spacing}
-              width={cardW}
-              active={i === index}
-              name={item.name}
-              src={art === "hands" ? `/hands/${key}.png` : `/plans/${key}.svg`}
-              hand={art === "hands"}
-              onSelect={() => !dragged.current && settle(i)}
-            />
-          );
-        })}
+        {exercises.map(({ key, art }, i) => (
+          <ExerciseCard
+            key={key}
+            i={i}
+            pos={pos}
+            spacing={spacing}
+            width={cardW}
+            active={i === index}
+            name={t.exercises.items[key].name}
+            src={art === "hands" ? `/hands/${key}.png` : `/plans/${key}.svg`}
+            hand={art === "hands"}
+          />
+        ))}
       </div>
 
       <div className="mt-8 flex items-center justify-center gap-3">
@@ -162,7 +134,7 @@ function Fan({ groupKey, items, art }: { groupKey: ExerciseGroupKey; items: read
           <ChevronLeft className="size-5" />
         </button>
         <span className="mono-label w-16 text-center tabular-nums text-ink/55" aria-live="polite">
-          {index + 1} / {items.length}
+          {index + 1} / {exercises.length}
         </span>
         <button type="button" aria-label={t.exercises.next} disabled={index === last} onClick={() => settle(index + 1)} className={buttonCircle}>
           <ChevronRight className="size-5" />
@@ -172,7 +144,7 @@ function Fan({ groupKey, items, art }: { groupKey: ExerciseGroupKey; items: read
   );
 }
 
-function FanCard({
+function ExerciseCard({
   i,
   pos,
   spacing,
@@ -181,7 +153,6 @@ function FanCard({
   name,
   src,
   hand,
-  onSelect,
 }: {
   i: number;
   pos: MotionValue<number>;
@@ -191,22 +162,19 @@ function FanCard({
   name: string;
   src: string;
   hand: boolean;
-  onSelect: () => void;
 }) {
   // Every visual property derives from one continuous value, so drags, flicks and arrows stay in sync.
   const offset = useTransform(pos, (p) => i - p);
   const x = useTransform(offset, (o) => o * spacing - width / 2);
   const y = useTransform(offset, (o) => Math.abs(o) * 22 + o * o * 3);
   const rotate = useTransform(offset, (o) => clamp(o * 6, -18, 18));
-  const scale = useTransform(offset, (o) => 1 - Math.min(Math.abs(o), 3) * 0.05);
   const opacity = useTransform(offset, (o) => (Math.abs(o) > 3.2 ? 0 : 1));
   const zIndex = useTransform(offset, (o) => 100 - Math.round(Math.abs(o) * 10));
 
   return (
     <motion.article
-      onClick={onSelect}
       aria-hidden={!active}
-      style={{ x, y, rotate, scale, opacity, zIndex, width, transformOrigin: "50% 120%" }}
+      style={{ x, y, rotate, opacity, zIndex, width, transformOrigin: "50% 120%" }}
       className="absolute left-1/2 top-0 rounded-[2rem] bg-surface p-3.5 shadow-[0_24px_48px_-28px_rgb(0_0_0/0.35)]"
     >
       <div className={`relative aspect-square overflow-hidden rounded-[1.5rem] ${hand ? "bg-yellow-soft" : "bg-blue-soft"}`}>

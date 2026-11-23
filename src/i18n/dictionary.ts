@@ -10,7 +10,6 @@ export const exerciseGroups = [
   { key: "body", art: "plans", items: ["sitToStand", "foldTowel"] },
 ] as const;
 
-export type ExerciseGroupKey = (typeof exerciseGroups)[number]["key"];
 export type ExerciseKey = (typeof exerciseGroups)[number]["items"][number];
 
 const id = {
@@ -54,14 +53,7 @@ const id = {
     eyebrow: "Latihan",
     title: "Dari ujung jari sampai bahu.",
     prev: "Sebelumnya",
-    groupsLabel: "Pilih kelompok latihan",
     next: "Berikutnya",
-    groups: {
-      hand: { name: "Tangan & jari" },
-      arm: { name: "Lengan" },
-      shoulder: { name: "Bahu" },
-      body: { name: "Badan & aktivitas" },
-    },
     items: {
       fullFist: { name: "Kepal dan buka tangan" },
       hookFist: { name: "Tekuk jari mengait" },
@@ -215,14 +207,7 @@ const en: Dictionary = {
     eyebrow: "Exercises",
     title: "From fingertips to shoulders.",
     prev: "Previous",
-    groupsLabel: "Choose an exercise group",
     next: "Next",
-    groups: {
-      hand: { name: "Hand & fingers" },
-      arm: { name: "Arm" },
-      shoulder: { name: "Shoulder" },
-      body: { name: "Trunk & tasks" },
-    },
     items: {
       fullFist: { name: "Close and open" },
       hookFist: { name: "Hook fingers" },
