@@ -16,8 +16,8 @@ const project = (velocity: number, rate = 0.998) => ((velocity / 1000) * rate) /
 /** Progressive resistance past the first and last card, in card units. */
 const rubberband = (overshoot: number, c = 0.55) => (overshoot * c) / (1 + c * Math.abs(overshoot));
 
-/** Every exercise in one row, in catalog order, each keeping its group's artwork style. */
-const exercises = exerciseGroups.flatMap((g) => g.items.map((key) => ({ key, art: g.art })));
+/** Every exercise in one row, in catalog order, tagged with its body area. */
+const exercises = exerciseGroups.flatMap((g) => g.items.map((key) => ({ key, area: g.key })));
 
 export function Exercises() {
   const { t } = useLanguage();
@@ -51,7 +51,7 @@ function Carousel() {
   useEffect(() => {
     const el = stage.current;
     if (!el) return;
-    const ro = new ResizeObserver(([e]) => setCardW(e.contentRect.width < 640 ? 260 : 380));
+    const ro = new ResizeObserver(([e]) => setCardW(e.contentRect.width < 640 ? Math.min(e.contentRect.width - 56, 340) : 560));
     ro.observe(el);
     return () => ro.disconnect();
   }, []);
@@ -112,9 +112,9 @@ function Carousel() {
         onPointerMove={onPointerMove}
         onPointerUp={onPointerUp}
         onPointerCancel={onPointerUp}
-        className="relative isolate h-[30rem] cursor-grab touch-pan-y select-none focus-visible:outline-none active:cursor-grabbing sm:h-[38rem]"
+        className="relative isolate h-[17rem] cursor-grab touch-pan-y select-none focus-visible:outline-none active:cursor-grabbing sm:h-[22rem]"
       >
-        {exercises.map(({ key, art }, i) => (
+        {exercises.map(({ key, area }, i) => (
           <ExerciseCard
             key={key}
             i={i}
@@ -123,8 +123,8 @@ function Carousel() {
             width={cardW}
             active={i === index}
             name={t.exercises.items[key].name}
-            src={art === "hands" ? `/hands/${key}.png` : `/plans/${key}.svg`}
-            hand={art === "hands"}
+            meta={`${String(i + 1).padStart(2, "0")} · ${t.exercises.areas[area]}`}
+            src={`/exercises/${key}.png`}
           />
         ))}
       </div>
@@ -151,8 +151,8 @@ function ExerciseCard({
   width,
   active,
   name,
+  meta,
   src,
-  hand,
 }: {
   i: number;
   pos: MotionValue<number>;
@@ -160,27 +160,32 @@ function ExerciseCard({
   width: number;
   active: boolean;
   name: string;
+  meta: string;
   src: string;
-  hand: boolean;
 }) {
   // Every visual property derives from one continuous value, so drags, flicks and arrows stay in sync.
   const offset = useTransform(pos, (p) => i - p);
   const x = useTransform(offset, (o) => o * spacing - width / 2);
   const y = useTransform(offset, (o) => Math.abs(o) * 22 + o * o * 3);
-  const rotate = useTransform(offset, (o) => clamp(o * 6, -18, 18));
+  const rotate = useTransform(offset, (o) => clamp(o * 4, -12, 12));
+  const scale = useTransform(offset, (o) => 1 - Math.min(Math.abs(o), 3) * 0.05);
   const opacity = useTransform(offset, (o) => (Math.abs(o) > 3.2 ? 0 : 1));
   const zIndex = useTransform(offset, (o) => 100 - Math.round(Math.abs(o) * 10));
 
   return (
     <motion.article
       aria-hidden={!active}
-      style={{ x, y, rotate, opacity, zIndex, width, transformOrigin: "50% 120%" }}
-      className="absolute left-1/2 top-0 rounded-[2rem] bg-surface p-3.5 shadow-[0_24px_48px_-28px_rgb(0_0_0/0.35)]"
+      style={{ x, y, rotate, scale, opacity, zIndex, width, transformOrigin: "50% 120%" }}
+      className="absolute left-1/2 top-0 overflow-hidden rounded-[1.75rem] bg-surface shadow-[0_24px_48px_-28px_rgb(0_0_0/0.35)] ring-1 ring-ink/5"
     >
-      <div className={`relative aspect-square overflow-hidden rounded-[1.5rem] ${hand ? "bg-yellow-soft" : "bg-blue-soft"}`}>
-        <Image src={src} alt="" fill draggable={false} sizes="24rem" className={hand ? "object-contain p-6" : "object-contain p-8"} />
+      {/* The art carries its own white backdrop, so it runs edge to edge and melts into the card. */}
+      <div className="relative aspect-[25/9] border-b border-ink/8">
+        <Image src={src} alt="" fill draggable={false} sizes="(min-width: 640px) 35rem, 90vw" className="object-cover" />
       </div>
-      <h3 className="px-3 pb-5 pt-6 text-[1.75rem] font-medium leading-tight tracking-[-0.025em]">{name}</h3>
+      <div className="px-6 pb-6 pt-5 sm:px-7">
+        <p className="mono-label uppercase text-ink/45">{meta}</p>
+        <h3 className="mt-2 text-2xl font-medium leading-tight tracking-[-0.025em] sm:text-[1.75rem]">{name}</h3>
+      </div>
     </motion.article>
   );
 }

@@ -4,10 +4,10 @@ export const locales: Locale[] = ["id", "en"];
 
 /** Exercise keys match the Tuntun app's catalog and the artwork in /public/hands and /public/plans. */
 export const exerciseGroups = [
-  { key: "hand", art: "hands", items: ["fullFist", "hookFist", "opposition", "spreading", "extensionSequence", "forearmRotation"] },
-  { key: "arm", art: "plans", items: ["armRaise", "elbowBend", "directionalReach"] },
-  { key: "shoulder", art: "plans", items: ["crossMidline", "shoulderFlexion", "externalRotation", "internalRotation"] },
-  { key: "body", art: "plans", items: ["sitToStand", "foldTowel"] },
+  { key: "hand", items: ["fullFist", "hookFist", "opposition", "spreading", "extensionSequence", "forearmRotation"] },
+  { key: "arm", items: ["armRaise", "elbowBend", "directionalReach"] },
+  { key: "shoulder", items: ["crossMidline", "shoulderFlexion", "externalRotation", "internalRotation"] },
+  { key: "body", items: ["sitToStand", "foldTowel"] },
 ] as const;
 
 export type ExerciseKey = (typeof exerciseGroups)[number]["items"][number];
@@ -56,6 +56,7 @@ const id = {
     title: "Lima belas latihan, dari jari hingga bahu.",
     prev: "Sebelumnya",
     next: "Berikutnya",
+    areas: { hand: "Tangan & jari", arm: "Lengan", shoulder: "Bahu", body: "Badan" },
     items: {
       fullFist: { name: "Kepal dan buka tangan" },
       hookFist: { name: "Tekuk jari mengait" },
@@ -230,6 +231,7 @@ const en: Dictionary = {
     title: "Fifteen exercises, from fingers to shoulders.",
     prev: "Previous",
     next: "Next",
+    areas: { hand: "Hand & fingers", arm: "Arm", shoulder: "Shoulder", body: "Whole body" },
     items: {
       fullFist: { name: "Close and open" },
       hookFist: { name: "Hook fingers" },

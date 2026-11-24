@@ -167,8 +167,9 @@ function IpadMock() {
       transition={{ type: "spring", bounce: 0, duration: 0.9, delay: 0.2 }}
       className="relative mx-auto w-full max-w-[960px]"
     >
-      <div className="rounded-[2.25rem] bg-night p-3 shadow-[0_40px_80px_-30px_rgb(0_0_0/0.45)] ring-1 ring-white/10 sm:p-3.5">
-        <div className="relative aspect-[4/3] overflow-hidden rounded-[1.6rem] bg-gradient-to-b from-[#fffaec] to-[#ffefc2]">
+      <div className="relative aspect-[2640/1880] drop-shadow-[0_40px_40px_rgb(0_0_0/0.25)]">
+        {/* The screen sits under the frame's transparent cutout, a hair larger so no seam shows. */}
+        <div className="absolute left-[4.1%] top-[5.55%] h-[88.9%] w-[91.8%] overflow-hidden rounded-[2.8%/3.9%] bg-gradient-to-b from-[#fffaec] to-[#ffefc2]">
           <Image
             src="/hands/hero.png"
             alt=""
@@ -224,6 +225,15 @@ function IpadMock() {
             </motion.div>
           </div>
         </div>
+        <Image
+          src="/device/ipad-pro-11-landscape.png"
+          alt=""
+          fill
+          preload
+          draggable={false}
+          sizes="(min-width: 1024px) 60rem, 95vw"
+          className="pointer-events-none select-none"
+        />
       </div>
 
       {/* Floating confirmation, the moment a rep lands */}
