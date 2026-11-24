@@ -33,12 +33,12 @@ const id: LegalContent = {
     eyebrow: "Legal",
     title: "Kebijakan Privasi",
     intro:
-      "Kebijakan ini menjelaskan bagaimana aplikasi iPad Tuntun: Teman Terapi (“Tuntun”) dan situs web ini menangani informasi Anda. Tuntun membantu pasien dan pendamping menjalani latihan gerak dengan kamera iPad, dan dirancang agar data latihan tetap berada di perangkat.",
+      "Kebijakan ini menjelaskan bagaimana aplikasi iPad Tuntun: Teman Terapi (“Tuntun”) dan situs web ini menangani informasi Anda. Tuntun memakai kamera iPad untuk memandu pasien dan pendamping berlatih gerak, dan data latihan tetap berada di iPad.",
     summary: {
       title: "Ringkasnya",
       points: [
-        "Tidak perlu akun. Data latihan tidak dikirim ke server kami.",
-        "Tayangan kamera langsung dan perintah suara diproses di iPad. Rekaman suara dan transkrip tidak disimpan.",
+        "Anda tidak perlu membuat akun, dan data latihan tidak dikirim ke server kami.",
+        "Tayangan kamera langsung dan perintah suara diproses di iPad. Tuntun tidak menyimpan rekaman suara atau transkrip.",
         "Secara bawaan, cuplikan singkat dari pengulangan pilihan disimpan di iPad dengan wajah dan latar disamarkan. Anda dapat memilih Kerangka saja atau Tanpa rekaman.",
         "Tidak ada iklan atau analitik pihak ketiga.",
       ],
@@ -52,9 +52,9 @@ const id: LegalContent = {
       },
       {
         heading: "Data yang diproses dan disimpan aplikasi",
-        body: ["Agar latihan dapat dipandu dan dicatat, aplikasi memproses informasi berikut di perangkat Anda:"],
+        body: ["Aplikasi memproses informasi berikut di iPad Anda untuk memandu dan mencatat latihan:"],
         list: [
-          "Kamera: gambar diproses untuk mengikuti gerakan tangan, lengan, dan badan serta menghitung pengulangan. Tayangan kamera langsung tidak diunggah ke layanan milik kami.",
+          "Kamera: aplikasi memproses gambar untuk mengikuti gerakan tangan, lengan, dan badan serta menghitung pengulangan. Tayangan kamera langsung tidak diunggah ke layanan milik kami.",
           "Mikrofon dan pengenalan ucapan: perintah suara dikenali di perangkat. Rekaman suara dan transkrip tidak disimpan dan tidak dikirim ke layanan milik kami.",
           "Rencana dan hasil latihan: pengaturan latihan, sisi tubuh, tanggal sesi, jumlah pengulangan atau waktu latihan yang teramati, jawaban tentang rasa latihan, laporan, riwayat kegiatan, dan lencana pencapaian.",
           "Nama pasien (opsional): disimpan di perangkat untuk sapaan.",
@@ -62,7 +62,7 @@ const id: LegalContent = {
         ],
         after: [
           "Cuplikan video dapat memperlihatkan pasien, orang lain, pakaian, atau ruangan. Penyamaran otomatis tidak menjamin identitas tersembunyi; pada latihan tangan, wajah yang tidak terdeteksi dapat tetap terlihat. Mintalah persetujuan pasien dan perhatikan orang lain di area kamera sebelum memilih perekaman.",
-          "Hasil latihan dapat mencerminkan kondisi kesehatan. Karena itu informasi ini hanya disimpan di iPad Anda dan tidak dikirim kepada kami.",
+          "Hasil latihan dapat menunjukkan kondisi kesehatan, sehingga hanya disimpan di iPad Anda dan tidak dikirim kepada kami.",
         ],
       },
       {
@@ -87,22 +87,22 @@ const id: LegalContent = {
       {
         heading: "Penyimpanan, cadangan, dan penghapusan",
         body: [
-          "Data aplikasi disimpan pada iPad sampai dihapus melalui fitur yang tersedia atau aplikasi dihapus. Laporan dan tayangan ulang terkait dapat dihapus dari riwayat; menghapus laporan tidak otomatis menghapus lencana yang sudah diperoleh. Nama pasien dapat dihapus di Pengaturan. Menghapus aplikasi akan menghapus seluruh data Tuntun di perangkat tersebut.",
+          "Data aplikasi disimpan pada iPad sampai dihapus melalui fitur yang tersedia atau aplikasi dihapus. Anda dapat menghapus laporan beserta tayangan ulangnya dari riwayat; menghapus laporan tidak otomatis menghapus lencana yang sudah diperoleh. Nama pasien dapat dihapus di Pengaturan. Menghapus aplikasi akan menghapus seluruh data Tuntun di perangkat tersebut.",
           "Tuntun tidak memiliki sinkronisasi cloud sendiri. Namun, data di iPad dapat ikut tercadang melalui fitur cadangan perangkat (iCloud atau komputer) sesuai pengaturan Anda dan kebijakan Apple. Menghapus data di aplikasi tidak selalu menghapus salinan di cadangan yang sudah ada.",
         ],
       },
       {
         heading: "Situs web ini",
         body: [
-          "Situs web Tuntun tidak menggunakan cookie, analitik, atau pelacak sendiri. Pilihan bahasa Anda disimpan di penyimpanan lokal peramban agar tetap diingat.",
-          "Situs ini dihosting oleh Vercel, yang dapat memproses log server standar (seperti alamat IP, jenis peramban, dan waktu akses) untuk keamanan dan pengoperasian layanan. Jika Anda mengirim email kepada kami, kami menggunakan alamat dan isi email tersebut hanya untuk membalas pesan Anda. Mohon tidak mengirim video pasien atau informasi kesehatan melalui email kecuali Anda memilih untuk membagikannya.",
-          "Formulir masukan di situs ini disediakan oleh Airtable. Data yang Anda kirim disimpan di ruang kerja Airtable kami dan hanya digunakan untuk meningkatkan Tuntun; pemrosesan oleh Airtable tunduk pada kebijakan privasi Airtable.",
+          "Situs web Tuntun tidak menggunakan cookie, analitik, atau pelacak sendiri. Pilihan bahasa Anda disimpan di penyimpanan lokal peramban agar diingat saat Anda berkunjung lagi.",
+          "Situs ini dihosting oleh Vercel, yang dapat memproses log server standar (seperti alamat IP, jenis peramban, dan waktu akses) untuk keamanan dan pengoperasian layanan. Jika Anda mengirim email kepada kami, kami menggunakan alamat dan isi email tersebut hanya untuk membalas pesan Anda. Hindari mengirim video pasien atau informasi kesehatan lewat email, kecuali Anda memang ingin membagikannya kepada kami.",
+          "Formulir masukan di situs ini memakai Airtable. Kami menyimpan data yang Anda kirim di ruang kerja Airtable kami dan hanya menggunakannya untuk meningkatkan Tuntun; pemrosesan oleh Airtable tunduk pada kebijakan privasi Airtable.",
         ],
       },
       {
         heading: "TestFlight dan Apple",
         body: [
-          "Selama masa uji coba, Tuntun didistribusikan melalui TestFlight. Apple dapat membagikan kepada kami laporan crash dan masukan yang Anda pilih untuk dikirim, beserta informasi perangkat dan alamat email undangan penguji. Pemrosesan oleh Apple tunduk pada kebijakan privasi Apple.",
+          "Selama masa uji coba, Tuntun didistribusikan melalui TestFlight. Jika Anda mengirim laporan crash atau masukan, Apple dapat membagikannya kepada kami, beserta informasi perangkat dan alamat email penerima undangan penguji. Pemrosesan oleh Apple tunduk pada kebijakan privasi Apple.",
         ],
       },
       {
@@ -121,7 +121,7 @@ const id: LegalContent = {
       {
         heading: "Perubahan kebijakan",
         body: [
-          "Kami dapat memperbarui kebijakan ini jika cara aplikasi menangani data berubah. Tanggal “Terakhir diperbarui” akan diubah, dan perubahan penting akan diberitahukan melalui situs ini atau aplikasi.",
+          "Kami dapat memperbarui kebijakan ini jika cara aplikasi menangani data berubah. Tanggal “Terakhir diperbarui” akan diubah, dan kami akan mengumumkan perubahan penting melalui situs ini atau aplikasi.",
         ],
       },
       {
@@ -228,12 +228,12 @@ const en: LegalContent = {
     eyebrow: "Legal",
     title: "Privacy Policy",
     intro:
-      "This policy explains how the Tuntun: Teman Terapi iPad app (“Tuntun”) and this website handle your information. Tuntun helps patients and caregivers follow movement practice using the iPad camera, and is designed so practice data stays on the device.",
+      "This policy explains how the Tuntun: Teman Terapi iPad app (“Tuntun”) and this website handle your information. Tuntun uses the iPad camera to guide a patient and caregiver through movement practice, and practice data stays on the iPad.",
     summary: {
       title: "In short",
       points: [
-        "No account needed. Practice data is never sent to our servers.",
-        "The live camera feed and voice commands are processed on the iPad. No audio or transcripts are saved.",
+        "You don't need an account, and practice data is never sent to our servers.",
+        "The live camera feed and voice commands are processed on the iPad. Tuntun saves no audio or transcripts.",
         "By default, short clips of selected repetitions are saved on the iPad with face and background obscured. You can choose Skeleton only or Off.",
         "No third-party advertising or analytics.",
       ],
@@ -247,9 +247,9 @@ const en: LegalContent = {
       },
       {
         heading: "Information the app uses and stores",
-        body: ["To guide and record practice, the app processes the following on your device:"],
+        body: ["The app processes this information on your iPad to guide and record practice:"],
         list: [
-          "Camera: images are processed to follow hand, arm, and body movement and count repetitions. The live camera feed is not uploaded to a service we operate.",
+          "Camera: the app processes images to follow hand, arm, and body movement and count repetitions. The live camera feed is not uploaded to a service we operate.",
           "Microphone and speech recognition: voice commands are recognized on the device. Audio recordings and transcripts are not saved or sent to a service we operate.",
           "Plans and practice results: practice settings, the side being trained, session dates, observed repetitions or practice time, responses about how practice felt, reports, activity history, and achievement badges.",
           "Patient name (optional): stored on the device for greetings.",
@@ -257,7 +257,7 @@ const en: LegalContent = {
         ],
         after: [
           "Clips may show the patient, other people, clothing, or the room. Automated obscuring cannot guarantee anonymity; in hand exercises, a face that is not detected may remain visible. Obtain the patient's consent and consider anyone else in camera view before recording.",
-          "Practice results may reflect health conditions. That is why this information is kept only on your iPad and is never sent to us.",
+          "Practice results can reveal health conditions, so they stay on your iPad and are never sent to us.",
         ],
       },
       {
@@ -282,22 +282,22 @@ const en: LegalContent = {
       {
         heading: "Storage, backup, and deletion",
         body: [
-          "App information stays on the iPad until you delete it using the available controls or remove the app. Reports and their related replays can be deleted from history; deleting a report does not erase badges already earned. You can clear the patient name in Settings. Removing the app deletes all Tuntun data on that device.",
+          "App information stays on the iPad until you delete it using the available controls or remove the app. You can delete reports and their replays from history; deleting a report does not erase badges already earned. You can clear the patient name in Settings. Removing the app deletes all Tuntun data on that device.",
           "Tuntun has no cloud sync of its own. However, information on the iPad may be included in device backups (iCloud or a computer) depending on your settings and Apple's policies. Deleting information in the app may not erase copies already held in backups.",
         ],
       },
       {
         heading: "This website",
         body: [
-          "The Tuntun website uses no cookies, analytics, or trackers of its own. Your language choice is saved in your browser's local storage so it is remembered.",
-          "The site is hosted by Vercel, which may process standard server logs (such as IP address, browser type, and access time) for security and operation. If you email us, we use your address and message only to reply to you. Please do not email patient videos or health information unless you choose to share them.",
-          "The feedback form on this site is provided by Airtable. What you submit is stored in our Airtable workspace and used only to improve Tuntun; Airtable's processing is governed by Airtable's privacy policy.",
+          "The Tuntun website uses no cookies, analytics, or trackers of its own. Your language choice is saved in your browser's local storage so the site remembers it on your next visit.",
+          "The site is hosted by Vercel, which may process standard server logs (such as IP address, browser type, and access time) for security and operation. If you email us, we use your address and message only to reply to you. Avoid emailing patient videos or health information unless you mean to share them with us.",
+          "The feedback form on this site runs on Airtable. We store what you submit in our Airtable workspace and use it only to improve Tuntun; Airtable's processing is governed by Airtable's privacy policy.",
         ],
       },
       {
         heading: "TestFlight and Apple",
         body: [
-          "During testing, Tuntun is distributed through TestFlight. Apple may share with us crash reports and feedback you choose to send, along with device information and the tester invitation email address. Apple's processing is governed by Apple's privacy policy.",
+          "During testing, Tuntun is distributed through TestFlight. If you send crash reports or feedback, Apple may share them with us, along with device information and the email address your tester invitation went to. Apple's processing is governed by Apple's privacy policy.",
         ],
       },
       {
@@ -316,7 +316,7 @@ const en: LegalContent = {
       {
         heading: "Changes to this policy",
         body: [
-          "We may update this policy if the app changes how it handles information. The “Last updated” date will change, and significant changes will be announced on this site or in the app.",
+          "We may update this policy if the app changes how it handles information. The “Last updated” date will change, and we will announce significant changes on this site or in the app.",
         ],
       },
       {

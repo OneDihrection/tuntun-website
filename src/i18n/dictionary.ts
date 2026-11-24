@@ -28,8 +28,8 @@ const id = {
   },
   hero: {
     eyebrow: "Latihan rehabilitasi pascastroke",
-    title: "Latihan pascastroke yang terarah, langsung dari rumah.",
-    sub: "Panduan visual, arahan suara, dan penghitungan otomatis untuk latihan tubuh bagian atas.",
+    title: "Latihan pascastroke yang bisa dilakukan di rumah.",
+    sub: "Tuntun memperagakan setiap gerakan tubuh bagian atas, memandu dengan suara, dan menghitung repetisi lewat kamera.",
     cta: "Daftar akses awal",
     secondary: "Lihat latihan",
     soon: "Segera di",
@@ -44,7 +44,7 @@ const id = {
   },
   statement: {
     eyebrow: "Tentang Tuntun",
-    text: "Konsisten berlatih, dengan panduan yang jelas.",
+    text: "Berlatih di rumah, ditemani pendamping.",
   },
   pillars: [
     { title: "Demonstrasi yang jelas" },
@@ -86,7 +86,7 @@ const id = {
   },
   features: {
     eyebrow: "Fitur",
-    title: "Dirancang bersama kebutuhan pasien dan pendamping.",
+    title: "Dibuat untuk pasien yang berlatih bersama pendampingnya.",
     camera: {
       title: "Kamera membaca gerakan",
       desc: "Setiap repetisi dihitung secara otomatis.",
@@ -102,7 +102,7 @@ const id = {
       ],
     },
     progress: {
-      title: "Kemajuan yang terukur",
+      title: "Kemajuan tiap minggu",
       desc: "Riwayat latihan dari minggu ke minggu.",
       label: "Repetisi minggu ini",
       days: ["Sen", "Sel", "Rab", "Kam", "Jum", "Sab", "Min"],
@@ -110,7 +110,7 @@ const id = {
   },
   privacy: {
     eyebrow: "Privasi",
-    title: "Diproses di perangkat. Tanpa akun. Tanpa cloud.",
+    title: "Semua diproses di iPad, tanpa akun dan tanpa cloud.",
     points: [
       { title: "Kamera diproses di iPad" },
       { title: "Suara tidak direkam" },
@@ -121,7 +121,7 @@ const id = {
   },
   partners: {
     eyebrow: "Kolaborasi",
-    title: "Membawa latihan terarah ke lebih banyak keluarga.",
+    title: "Ingin bekerja sama dengan kami?",
     groups: [
       { title: "Rumah sakit & klinik" },
       { title: "Terapis okupasi & fisioterapis" },
@@ -161,7 +161,7 @@ const id = {
   feedback: {
     eyebrow: "Masukan",
     title: "Bantu kami membuat Tuntun lebih baik.",
-    sub: "Ceritakan pengalaman Anda, laporkan kendala, atau ajukan pertanyaan. Setiap masukan kami baca langsung.",
+    sub: "Ceritakan pengalaman Anda, laporkan kendala, atau ajukan pertanyaan. Kami membaca setiap masukan.",
     direct: "Lebih suka email langsung?",
     note: "Mohon tidak menyertakan video pasien atau informasi kesehatan.",
     noteLink: "Kebijakan Privasi",
@@ -170,13 +170,13 @@ const id = {
     open: "Buka formulir di tab baru",
   },
   closing: {
-    title: "Lanjutkan pemulihan dengan langkah yang terukur.",
+    title: "Tuntun segera hadir di iPad. Daftar untuk mencobanya lebih dulu.",
     cta: "Daftar akses awal",
     secondary: "Hubungi kami",
     play: "Seret dan lempar bentuknya",
   },
   footer: {
-    tagline: "Latihan rehabilitasi pascastroke yang terarah, di rumah.",
+    tagline: "Latihan tubuh bagian atas untuk pemulihan stroke, di rumah.",
     rights: "Hak cipta dilindungi.",
     privacy: "Kebijakan Privasi",
     terms: "Syarat dan Ketentuan",
@@ -202,8 +202,8 @@ const en: Dictionary = {
   },
   hero: {
     eyebrow: "Post-stroke rehabilitation practice",
-    title: "Structured stroke rehab practice, right at home.",
-    sub: "Visual demos, spoken cues and automatic counting for upper-body exercises.",
+    title: "Stroke rehab exercises you can do at home.",
+    sub: "Tuntun shows each upper-body movement, talks you through it, and uses the camera to count repetitions.",
     cta: "Request early access",
     secondary: "See the exercises",
     soon: "Coming soon on the",
@@ -218,7 +218,7 @@ const en: Dictionary = {
   },
   statement: {
     eyebrow: "About Tuntun",
-    text: "Consistent practice, clearly guided.",
+    text: "Practice at home, with a caregiver beside you.",
   },
   pillars: [
     { title: "Clear demonstrations" },
@@ -260,7 +260,7 @@ const en: Dictionary = {
   },
   features: {
     eyebrow: "Features",
-    title: "Designed around patients and caregivers.",
+    title: "Made for a patient and caregiver practicing together.",
     camera: {
       title: "Camera-based tracking",
       desc: "Every repetition counted automatically.",
@@ -276,7 +276,7 @@ const en: Dictionary = {
       ],
     },
     progress: {
-      title: "Measurable progress",
+      title: "Progress by week",
       desc: "A week-by-week record of practice.",
       label: "Repetitions this week",
       days: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
@@ -284,7 +284,7 @@ const en: Dictionary = {
   },
   privacy: {
     eyebrow: "Privacy",
-    title: "Processed on device. No account. No cloud.",
+    title: "Everything runs on the iPad, with no account and no cloud.",
     points: [
       { title: "Camera processed on the iPad" },
       { title: "Voice is never recorded" },
@@ -295,7 +295,7 @@ const en: Dictionary = {
   },
   partners: {
     eyebrow: "Partnerships",
-    title: "Bringing guided practice to more families.",
+    title: "Want to work with us?",
     groups: [
       { title: "Hospitals & clinics" },
       { title: "Occupational & physical therapists" },
@@ -335,7 +335,7 @@ const en: Dictionary = {
   feedback: {
     eyebrow: "Feedback",
     title: "Help us make Tuntun better.",
-    sub: "Share your experience, report a problem, or ask a question. Our team reads every response.",
+    sub: "Share your experience, report a problem, or ask a question. We read every response.",
     direct: "Prefer to email directly?",
     note: "Please don't include patient videos or health information.",
     noteLink: "Privacy Policy",
@@ -344,13 +344,13 @@ const en: Dictionary = {
     open: "Open the form in a new tab",
   },
   closing: {
-    title: "Continue recovery, one measured step at a time.",
+    title: "Tuntun is coming to the iPad soon. Sign up to try it first.",
     cta: "Request early access",
     secondary: "Contact us",
     play: "Drag and throw the shapes",
   },
   footer: {
-    tagline: "Structured post-stroke rehab practice at home.",
+    tagline: "Upper-body exercises for stroke recovery at home.",
     rights: "All rights reserved.",
     privacy: "Privacy Policy",
     terms: "Terms and Conditions",
