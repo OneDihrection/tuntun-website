@@ -41,6 +41,7 @@ export function Navbar() {
     { href: "/#fitur", label: t.nav.features },
     { href: "/#privasi", label: t.nav.privacy },
     { href: "/#faq", label: t.nav.faq },
+    { href: "/#tim", label: t.nav.team },
   ];
 
   useEffect(() => {

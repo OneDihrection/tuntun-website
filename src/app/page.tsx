@@ -9,6 +9,7 @@ import { Navbar } from "@/components/Navbar";
 import { Partners } from "@/components/Partners";
 import { Privacy } from "@/components/Privacy";
 import { Statement } from "@/components/Statement";
+import { Team } from "@/components/Team";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
         <Privacy />
         <Faq />
         <Partners />
+        <Team />
         <Closing />
       </main>
       <Footer />

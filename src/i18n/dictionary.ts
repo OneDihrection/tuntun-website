@@ -19,6 +19,7 @@ const id = {
     features: "Fitur",
     privacy: "Privasi",
     faq: "FAQ",
+    team: "Tim",
     cta: "Daftar akses awal",
     menu: "Buka menu",
     close: "Tutup menu",
@@ -127,6 +128,13 @@ const id = {
     ],
     cta: "Hubungi kami",
   },
+  team: {
+    eyebrow: "Tim",
+    title: "Orang-orang di balik Tuntun.",
+    roles: { developer: "Pengembang", designer: "Desainer" },
+    cta: "LinkedIn",
+    ctaLabel: "Profil LinkedIn {name}",
+  },
   faq: {
     eyebrow: "FAQ",
     title: "Pertanyaan umum.",
@@ -173,6 +181,7 @@ const en: Dictionary = {
     features: "Features",
     privacy: "Privacy",
     faq: "FAQ",
+    team: "Team",
     cta: "Request early access",
     menu: "Open menu",
     close: "Close menu",
@@ -280,6 +289,13 @@ const en: Dictionary = {
       { title: "Investors & partners" },
     ],
     cta: "Contact us",
+  },
+  team: {
+    eyebrow: "Team",
+    title: "The people behind Tuntun.",
+    roles: { developer: "Developer", designer: "Designer" },
+    cta: "LinkedIn",
+    ctaLabel: "{name} on LinkedIn",
   },
   faq: {
     eyebrow: "FAQ",
