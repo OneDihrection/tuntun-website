@@ -27,6 +27,6 @@ export const TEAM: { key: string; name: string; role: TeamRole; linkedin: string
   { key: "gracia", name: "Gracia Adonay Efendi", role: "developer", linkedin: "https://www.linkedin.com/in/gracia-adonay-efendi-634469380/", photo: graciaPhoto },
   { key: "amelia", name: "Amelia Putri Aftiana", role: "developer", linkedin: "https://www.linkedin.com/in/ameliaaftiana/", photo: ameliaPhoto },
   { key: "fauzan", name: "Fauzan Azima", role: "developer", linkedin: "https://www.linkedin.com/in/fauzan-azimaa/", photo: fauzanPhoto },
-  { key: "devanya", name: "Devanya Azarine", role: "designer", linkedin: "https://www.linkedin.com/in/devanyazarine/", photo: devanyaPhoto },
-  { key: "rifan", name: "M Rifan Ardiansyah", role: "designer", linkedin: "https://www.linkedin.com/in/rifanardiansyah/", photo: rifanPhoto },
+  { key: "devanya", name: "Devanya Farah Azarine", role: "designer", linkedin: "https://www.linkedin.com/in/devanyazarine/", photo: devanyaPhoto },
+  { key: "rifan", name: "Rif'an Ardiansyah", role: "designer", linkedin: "https://www.linkedin.com/in/rifanardiansyah/", photo: rifanPhoto },
 ];
