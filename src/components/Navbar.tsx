@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
 import { useEffect, useId, useState } from "react";
-import { CONTACT_EMAIL } from "@/config";
+import { TESTFLIGHT_URL } from "@/config";
 import { locales } from "@/i18n/dictionary";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import { Logo } from "./Brand";
@@ -80,7 +80,7 @@ export function Navbar() {
           <div className="hidden sm:block">
             <LanguageToggle />
           </div>
-          <a href={`mailto:${CONTACT_EMAIL}`} className={`${buttonPrimary} px-4! py-2! text-sm! max-sm:hidden`}>
+          <a href={TESTFLIGHT_URL} target="_blank" rel="noopener noreferrer" className={`${buttonPrimary} px-4! py-2! text-sm! max-sm:hidden`}>
             {t.nav.cta}
           </a>
           <button
@@ -130,7 +130,7 @@ export function Navbar() {
               </ul>
               <div className="mt-2 flex items-center justify-between gap-3 border-t border-ink/10 px-2 pt-4 pb-1">
                 <LanguageToggle />
-                <a href={`mailto:${CONTACT_EMAIL}`} className={`${buttonPrimary} px-4! py-2! text-sm!`}>
+                <a href={TESTFLIGHT_URL} target="_blank" rel="noopener noreferrer" className={`${buttonPrimary} px-4! py-2! text-sm!`}>
                   {t.nav.cta}
                 </a>
               </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { CONTACT_EMAIL } from "@/config";
+import { CONTACT_EMAIL, TESTFLIGHT_URL } from "@/config";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import { ArrowRight } from "./Icons";
 import { Playground, type PlaygroundItem } from "./physics/Playground";
@@ -77,7 +77,7 @@ export function Closing() {
       <Reveal className="pointer-events-none relative z-10 mx-auto max-w-4xl px-5 text-center sm:px-8">
         <h2 className="title">{t.closing.title}</h2>
         <div className="pointer-events-auto mt-12 flex flex-wrap items-center justify-center gap-3">
-          <a href={`mailto:${CONTACT_EMAIL}`} className={buttonPrimary}>
+          <a href={TESTFLIGHT_URL} target="_blank" rel="noopener noreferrer" className={buttonPrimary}>
             {t.closing.cta}
             <ArrowRight className="size-4" />
           </a>

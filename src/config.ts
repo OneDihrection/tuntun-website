@@ -12,6 +12,9 @@ export const CONTACT_EMAIL = "contact@tuntun.rehab";
 export const FEEDBACK_FORM_URL = "https://airtable.com/appuQ1rgmTQKwCFSB/pagnfHtBKGLkEIVaG/form";
 export const FEEDBACK_EMBED_URL = FEEDBACK_FORM_URL.replace("airtable.com/", "airtable.com/embed/");
 
+/** Public TestFlight link for the external beta. */
+export const TESTFLIGHT_URL = "https://testflight.apple.com/join/6tMkdmt2";
+
 export const SITE_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
   ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
   : "http://localhost:3000";

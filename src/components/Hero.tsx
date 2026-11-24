@@ -3,7 +3,7 @@
 import { motion } from "motion/react";
 import Image from "next/image";
 import { useRef } from "react";
-import { CONTACT_EMAIL } from "@/config";
+import { TESTFLIGHT_URL } from "@/config";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import { floatPieces, gsap, MOTION_OK, SplitText, useGSAP } from "@/lib/gsap";
 import { AppleIcon, ArrowRight, Check } from "./Icons";
@@ -131,7 +131,7 @@ export function Hero() {
           {t.hero.sub}
         </p>
         <div data-hero-rest className="gsap-in mt-10 flex flex-wrap items-center justify-center gap-3">
-          <a href={`mailto:${CONTACT_EMAIL}`} className={buttonPrimary}>
+          <a href={TESTFLIGHT_URL} target="_blank" rel="noopener noreferrer" className={buttonPrimary}>
             {t.hero.cta}
             <ArrowRight className="size-4" />
           </a>
