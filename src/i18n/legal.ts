@@ -145,12 +145,12 @@ const id: LegalContent = {
       {
         heading: "Tentang Tuntun",
         body: [
-          "Tuntun adalah aplikasi untuk membantu latihan gerak tubuh bagian atas secara mandiri di rumah, termasuk tangan dan jari, lengan, bahu, berdiri dari posisi duduk, dan aktivitas sederhana. Tuntun menyediakan contoh gerakan, petunjuk suara dan teks, pengamatan gerakan melalui kamera, laporan, dan tayangan ulang opsional.",
+          "Tuntun membantu Anda berlatih gerak tubuh bagian atas secara mandiri di rumah, termasuk tangan dan jari, lengan, bahu, berdiri dari posisi duduk, dan aktivitas sederhana. Aplikasi menampilkan contoh gerakan, memberi petunjuk suara dan teks, mengamati gerakan lewat kamera, dan menyediakan laporan serta tayangan ulang opsional.",
         ],
       },
       {
         heading: "Bukan layanan medis",
-        body: ["Tuntun adalah alat bantu latihan dan bukan perangkat medis. Tuntun tidak memberikan diagnosis, pengobatan, atau resep terapi."],
+        body: ["Tuntun adalah alat bantu latihan, bukan perangkat medis, dan tidak memberikan diagnosis, pengobatan, atau resep terapi."],
         list: [
           "Konsultasikan dengan dokter atau terapis sebelum memulai latihan. Jenis, jumlah, dan batas gerak latihan sebaiknya mengikuti arahan mereka.",
           "Pengaturan bawaan di aplikasi hanyalah contoh, bukan dosis rehabilitasi yang dianjurkan.",
@@ -161,7 +161,7 @@ const id: LegalContent = {
       {
         heading: "Pengguna dan pendamping",
         body: [
-          "Tuntun ditujukan untuk orang dewasa. Kami menganjurkan latihan dilakukan dengan pengawasan pendamping, terutama pada awal pemakaian dan pada latihan berdiri. Pendamping bertanggung jawab memastikan posisi, lingkungan, dan intensitas latihan aman bagi pengguna, serta meminta persetujuan pasien sebelum menyimpan tayangan ulang.",
+          "Tuntun ditujukan untuk orang dewasa. Sebaiknya pendamping mengawasi latihan, terutama pada awal pemakaian dan pada latihan berdiri. Pendamping bertanggung jawab memastikan posisi, lingkungan, dan intensitas latihan aman bagi pengguna, serta meminta persetujuan pasien sebelum menyimpan tayangan ulang.",
         ],
       },
       {
@@ -188,7 +188,7 @@ const id: LegalContent = {
       {
         heading: "Kekayaan intelektual",
         body: [
-          "Nama Tuntun, logo, desain, ilustrasi, animasi, narasi, dan perangkat lunak adalah milik Tim Tuntun atau pemberi lisensinya. Huruf Plus Jakarta Sans digunakan di bawah SIL Open Font License. Anda diberikan hak terbatas, tidak eksklusif, dan tidak dapat dialihkan untuk menggunakan Tuntun untuk keperluan pribadi.",
+          "Nama Tuntun, logo, desain, ilustrasi, animasi, narasi, dan perangkat lunak adalah milik Tim Tuntun atau pemberi lisensinya. Tuntun memakai huruf Plus Jakarta Sans di bawah SIL Open Font License. Kami memberi Anda hak terbatas, tidak eksklusif, dan tidak dapat dialihkan untuk memakai Tuntun bagi keperluan pribadi.",
         ],
       },
       {
@@ -206,12 +206,12 @@ const id: LegalContent = {
       {
         heading: "Hukum yang berlaku",
         body: [
-          "Syarat dan Ketentuan ini diatur oleh hukum Republik Indonesia. Setiap perselisihan akan diupayakan diselesaikan secara musyawarah terlebih dahulu sebelum menempuh jalur hukum yang berlaku.",
+          "Syarat dan Ketentuan ini diatur oleh hukum Republik Indonesia. Jika terjadi perselisihan, para pihak akan lebih dulu berusaha menyelesaikannya secara musyawarah sebelum menempuh jalur hukum yang berlaku.",
         ],
       },
       {
         heading: "Kontak",
-        body: [`Pertanyaan tentang Syarat dan Ketentuan ini dapat dikirim ke ${CONTACT_EMAIL}.`],
+        body: [`Kirim pertanyaan tentang Syarat dan Ketentuan ini ke ${CONTACT_EMAIL}.`],
       },
     ],
   },
@@ -340,12 +340,12 @@ const en: LegalContent = {
       {
         heading: "About Tuntun",
         body: [
-          "Tuntun is an app that supports independent upper-body movement practice at home, including hand and finger, arm, and shoulder exercises, sit to stand, and simple tasks. It provides movement examples, spoken and written cues, camera-based movement observation, reports, and optional replays.",
+          "Tuntun helps you practice upper-body movement independently at home, including hand and finger, arm, and shoulder exercises, sit to stand, and simple tasks. It shows movement examples, gives spoken and written cues, observes movement through the camera, and provides reports and optional replays.",
         ],
       },
       {
         heading: "Not a medical service",
-        body: ["Tuntun is a practice aid and not a medical device. Tuntun does not provide diagnosis, treatment, or therapy prescriptions."],
+        body: ["Tuntun is a practice aid, not a medical device, and does not provide diagnosis, treatment, or therapy prescriptions."],
         list: [
           "Consult a doctor or therapist before starting. The type, amount, and range of exercise should follow their directions.",
           "Default settings in the app are examples only, not a recommended rehabilitation dose.",
@@ -356,7 +356,7 @@ const en: LegalContent = {
       {
         heading: "Users and caregivers",
         body: [
-          "Tuntun is intended for adults. We recommend practicing under a caregiver's supervision, especially when first using the app and during standing exercises. Caregivers are responsible for making sure the position, environment, and intensity of practice are safe, and for obtaining the patient's consent before saving replays.",
+          "Tuntun is intended for adults. A caregiver should supervise practice, especially when first using the app and during standing exercises. Caregivers are responsible for making sure the position, environment, and intensity of practice are safe, and for obtaining the patient's consent before saving replays.",
         ],
       },
       {
@@ -383,7 +383,7 @@ const en: LegalContent = {
       {
         heading: "Intellectual property",
         body: [
-          "The Tuntun name, logo, design, illustrations, animations, narration, and software belong to the Tuntun team or its licensors. The Plus Jakarta Sans typeface is used under the SIL Open Font License. You are granted a limited, non-exclusive, non-transferable right to use Tuntun for personal purposes.",
+          "The Tuntun name, logo, design, illustrations, animations, narration, and software belong to the Tuntun team or its licensors. Tuntun uses the Plus Jakarta Sans typeface under the SIL Open Font License. We grant you a limited, non-exclusive, non-transferable right to use Tuntun for personal purposes.",
         ],
       },
       {
@@ -401,12 +401,12 @@ const en: LegalContent = {
       {
         heading: "Governing law",
         body: [
-          "These Terms and Conditions are governed by the laws of the Republic of Indonesia. Any dispute will first be resolved through good-faith discussion before pursuing applicable legal channels.",
+          "These Terms and Conditions are governed by the laws of the Republic of Indonesia. If a dispute arises, the parties will first try to settle it through good-faith discussion before pursuing applicable legal channels.",
         ],
       },
       {
         heading: "Contact",
-        body: [`Questions about these Terms and Conditions can be sent to ${CONTACT_EMAIL}.`],
+        body: [`Send questions about these Terms and Conditions to ${CONTACT_EMAIL}.`],
       },
     ],
   },
