@@ -132,7 +132,7 @@ const id = {
   team: {
     eyebrow: "Tim",
     title: "Orang-orang di balik Tuntun.",
-    roles: { developer: "Pengembang", designer: "Desainer" },
+    roles: { developer: "Coder", designer: "Designer" },
     cta: "LinkedIn",
     ctaLabel: "Profil LinkedIn {name}",
   },
@@ -306,7 +306,7 @@ const en: Dictionary = {
   team: {
     eyebrow: "Team",
     title: "The people behind Tuntun.",
-    roles: { developer: "Developer", designer: "Designer" },
+    roles: { developer: "Coder", designer: "Designer" },
     cta: "LinkedIn",
     ctaLabel: "{name} on LinkedIn",
   },
