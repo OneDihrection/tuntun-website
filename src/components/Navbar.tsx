@@ -42,6 +42,7 @@ export function Navbar() {
     { href: "/#privasi", label: t.nav.privacy },
     { href: "/#faq", label: t.nav.faq },
     { href: "/#tim", label: t.nav.team },
+    { href: "/#masukan", label: t.nav.feedback },
   ];
 
   useEffect(() => {

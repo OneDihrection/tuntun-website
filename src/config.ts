@@ -8,6 +8,10 @@ import rifanPhoto from "@/assets/team/rifan.jpg";
 
 export const CONTACT_EMAIL = "contact@tuntun.rehab";
 
+/** Airtable interface form; the /embed/ variant is the one that allows iframing. */
+export const FEEDBACK_FORM_URL = "https://airtable.com/appuQ1rgmTQKwCFSB/pagnfHtBKGLkEIVaG/form";
+export const FEEDBACK_EMBED_URL = FEEDBACK_FORM_URL.replace("airtable.com/", "airtable.com/embed/");
+
 export const SITE_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
   ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
   : "http://localhost:3000";

@@ -94,8 +94,9 @@ const id: LegalContent = {
       {
         heading: "Situs web ini",
         body: [
-          "Situs web Tuntun tidak menggunakan cookie, analitik, atau pelacak. Pilihan bahasa Anda disimpan di penyimpanan lokal peramban agar tetap diingat.",
+          "Situs web Tuntun tidak menggunakan cookie, analitik, atau pelacak sendiri. Pilihan bahasa Anda disimpan di penyimpanan lokal peramban agar tetap diingat.",
           "Situs ini dihosting oleh Vercel, yang dapat memproses log server standar (seperti alamat IP, jenis peramban, dan waktu akses) untuk keamanan dan pengoperasian layanan. Jika Anda mengirim email kepada kami, kami menggunakan alamat dan isi email tersebut hanya untuk membalas pesan Anda. Mohon tidak mengirim video pasien atau informasi kesehatan melalui email kecuali Anda memilih untuk membagikannya.",
+          "Formulir masukan di situs ini disediakan oleh Airtable. Data yang Anda kirim disimpan di ruang kerja Airtable kami dan hanya digunakan untuk meningkatkan Tuntun; pemrosesan oleh Airtable tunduk pada kebijakan privasi Airtable.",
         ],
       },
       {
@@ -288,8 +289,9 @@ const en: LegalContent = {
       {
         heading: "This website",
         body: [
-          "The Tuntun website uses no cookies, analytics, or trackers. Your language choice is saved in your browser's local storage so it is remembered.",
+          "The Tuntun website uses no cookies, analytics, or trackers of its own. Your language choice is saved in your browser's local storage so it is remembered.",
           "The site is hosted by Vercel, which may process standard server logs (such as IP address, browser type, and access time) for security and operation. If you email us, we use your address and message only to reply to you. Please do not email patient videos or health information unless you choose to share them.",
+          "The feedback form on this site is provided by Airtable. What you submit is stored in our Airtable workspace and used only to improve Tuntun; Airtable's processing is governed by Airtable's privacy policy.",
         ],
       },
       {
